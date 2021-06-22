@@ -1,5 +1,6 @@
 package com.viktor.vano.robot.controller;
 
+import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -35,7 +36,6 @@ public class RobotController extends Application {
     private MyServer androidServer;
     private ImageView imageViewCamera;
     private Image imageCamera;
-    private BufferedImage img;
     private boolean updateImage = false;
     private final int cameraPort = 7770;
     private boolean forward = false;
@@ -53,6 +53,7 @@ public class RobotController extends Application {
     private ProgressBar[] progressBarsDistance;
     private STM32Status stm32Status;
     private CheckBox checkBoxDrivingAssistance;
+    private byte [] byteArray;
 
     @Override
     public void start(Stage stage){
@@ -192,6 +193,11 @@ public class RobotController extends Application {
                     left = false;
                 }
 
+                if(keyCode == KeyCode.R)
+                {
+                    checkBoxDrivingAssistance.setSelected(!checkBoxDrivingAssistance.isSelected());
+                }
+
                 if(keyCode == KeyCode.DIGIT1)
                     slider.setValue(10.0);
 
@@ -254,7 +260,7 @@ public class RobotController extends Application {
             }
         });
 
-        timeline = new Timeline(new KeyFrame(Duration.millis(20), event ->{
+        timeline = new Timeline(new KeyFrame(Duration.millis(10), event ->{
             updateImage();
             if(androidServer.isMessageReceived())
             {
@@ -343,7 +349,7 @@ public class RobotController extends Application {
             updateImage = false;
             System.out.println("some data: " + length);
             try{
-                img = ImageIO.read(new File("image.jpg"));
+                BufferedImage img = ImageIO.read(new ByteArrayInputStream(byteArray));
                 imageCamera = SwingFXUtils.toFXImage(img, null);
                 imageViewCamera.setImage(imageCamera);
             }catch (Exception e){
@@ -420,22 +426,12 @@ public class RobotController extends Application {
                             len = len + bytesRead;
                             byteArrayOutputStream.write(buffer, 0, bytesRead);
                         }
-                        byte [] byteArray;// = new byte [length];
                         byteArray = byteArrayOutputStream.toByteArray();
-                        File file = new File ("image.jpg");
-                        if (!file.exists())
-                        {
-                            file.createNewFile();
-                        }
-                        FileOutputStream fos = new FileOutputStream (file);
-                        fos.write(byteArray);
-                        fos.close();
-                        //ImageIO.write(img, "jpg", byteArrayOutputStream);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
 
-                    if(length > 1000)
+                    if(length > 5000)
                         updateImage = true;
                 }catch (SocketTimeoutException e)
                 {

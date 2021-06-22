@@ -17,11 +17,15 @@
 package com.viktor.vano.ip.camera;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -42,6 +46,7 @@ import android.hardware.camera2.TotalCaptureResult;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.ImageReader;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -63,8 +68,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.viktor.vano.ip.camera.R;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -77,6 +80,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
+
+import static com.viktor.vano.ip.camera.Variables.*;
 
 public class Camera2BasicFragment extends Fragment
         implements View.OnClickListener, ActivityCompat.OnRequestPermissionsResultCallback {
@@ -95,11 +100,21 @@ public class Camera2BasicFragment extends Fragment
         ORIENTATIONS.append(Surface.ROTATION_270, 180);
     }
 
-    private final int updatePeriod = 250;
-    private Handler handler = new Handler();
+    private final Handler imageHandler = new Handler();
+    private final Handler statusHandler = new Handler();
+    private StringSender stringSender;
     private Button buttonSet;
     private TextView textViewIP;
     private EditText editTextIP;
+
+    private BroadcastReceiver mBatInfoReceiver = new BroadcastReceiver(){
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+            int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+            Variables.batteryPct = level * 100 / (float)scale;
+        }
+    };
 
     /**
      * Tag for the {@link Log}.
@@ -444,6 +459,7 @@ public class Camera2BasicFragment extends Fragment
 
         textViewIP = view.findViewById(R.id.textViewIP);
         editTextIP = view.findViewById(R.id.editTextIP);
+        editTextIP.setText(stringIP);
         buttonSet = view.findViewById(R.id.set);
         buttonSet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -452,31 +468,58 @@ public class Camera2BasicFragment extends Fragment
                 if(ip.contains("."))
                 {
                     Variables.stringIP = ip;
-                    textViewIP.setText(Variables.stringIP);
+                    textViewIP.setText(Variables.stringIP + " " + Variables.batteryPct + "%");
                 }else
                 {
-                    textViewIP.setText("Wrong IP!!!");
+                    textViewIP.setText("Wrong IP!!! " + Variables.batteryPct + "%");
                 }
             }
         });
 
-        final ImageSender imageSender = new ImageSender(7770);
+        Context context = view.getContext();
+        context.registerReceiver(this.mBatInfoReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+
+        final ImageSender imageSender = new ImageSender(7770, updatePeriod-20);
         imageSender.start();
-        handler.postDelayed(new Runnable() {
+        imageHandler.postDelayed(new Runnable() {
             @Override
             public void run()
             {
-                handler.postDelayed(this, updatePeriod);
-                Bitmap bitmap = mTextureView.getBitmap();
-                int width = bitmap.getHeight();
-                int height = bitmap.getWidth();
-                System.out.println("Image res: " + width + " x " + height);
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-                byte array [] = baos.toByteArray();
-                imageSender.sendImageToServer(array);
+                imageHandler.postDelayed(this, updatePeriod);
+                try{
+                    Bitmap bitmap = mTextureView.getBitmap();
+                    int width = bitmap.getHeight();
+                    int height = bitmap.getWidth();
+                    System.out.println("Image res: " + width + " x " + height);
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                    byte array [] = baos.toByteArray();
+                    imageSender.sendImageToServer(array);
+                }catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
             }
         }, updatePeriod);
+
+        stringSender = new StringSender(7771);
+        stringSender.start();
+        statusHandler.postDelayed(new Runnable() {
+            @SuppressLint("MissingPermission")
+            @Override
+            public void run()
+            {
+                statusHandler.postDelayed(this, 1000);
+                if(Variables.stringIP.contains("."))
+                {
+                    textViewIP.setText(Variables.stringIP + " " + Variables.batteryPct + "%");
+                }else
+                {
+                    textViewIP.setText("Wrong IP!!! " + Variables.batteryPct + "%");
+                }
+                stringSender.send("Android Battery: " + Variables.batteryPct + "%");
+            }
+        }, 1000);
     }
 
     @Override

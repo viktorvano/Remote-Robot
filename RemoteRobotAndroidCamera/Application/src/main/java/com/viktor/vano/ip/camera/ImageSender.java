@@ -12,10 +12,12 @@ public class ImageSender extends Thread{
     private byte[] data;
     private boolean run = true;
     private boolean send = false;
+    private int timeout;
 
-    public ImageSender(int port)
+    public ImageSender(int port, int timeout)
     {
         this.port = port;
+        this.timeout = timeout;
     }
 
     public void stopThread()
@@ -41,7 +43,7 @@ public class ImageSender extends Thread{
                     // need host and port, we want to connect to the ServerSocket at port 7777
                     Socket socket = new Socket();
                     socket.setSoTimeout(230);
-                    socket.connect(new InetSocketAddress(Variables.stringIP, port), 230);
+                    socket.connect(new InetSocketAddress(Variables.stringIP, port), timeout);
                     System.out.println("Connected!");
 
                     // get the output stream from the socket.

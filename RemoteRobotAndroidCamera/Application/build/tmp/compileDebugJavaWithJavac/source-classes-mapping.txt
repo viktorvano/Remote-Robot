@@ -3,6 +3,8 @@ com/viktor/vano/ip/camera/BuildConfig.java
 com/viktor/vano/ip/camera/Camera2BasicFragment.java
  com.viktor.vano.ip.camera.Camera2BasicFragment
  com.viktor.vano.ip.camera.Camera2BasicFragment$1
+ com.viktor.vano.ip.camera.Camera2BasicFragment$10
+ com.viktor.vano.ip.camera.Camera2BasicFragment$11
  com.viktor.vano.ip.camera.Camera2BasicFragment$2
  com.viktor.vano.ip.camera.Camera2BasicFragment$3
  com.viktor.vano.ip.camera.Camera2BasicFragment$4
@@ -18,6 +20,8 @@ com/viktor/vano/ip/camera/Camera2BasicFragment.java
  com.viktor.vano.ip.camera.Camera2BasicFragment$ErrorDialog
  com.viktor.vano.ip.camera.Camera2BasicFragment$ErrorDialog$1
  com.viktor.vano.ip.camera.Camera2BasicFragment$ImageSaver
+com/viktor/vano/ip/camera/StringSender.java
+ com.viktor.vano.ip.camera.StringSender
 com/viktor/vano/ip/camera/AutoFitTextureView.java
  com.viktor.vano.ip.camera.AutoFitTextureView
 com/viktor/vano/ip/camera/CameraActivity.java

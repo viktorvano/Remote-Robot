@@ -3,6 +3,8 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Robot_Controller_jar</output-path>
     <root id="archive" name="Robot Controller.jar">
       <element id="module-output" name="Robot Controller" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.7.0/okhttp-3.7.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/squareup/okio/okio/1.12.0/okio-1.12.0.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

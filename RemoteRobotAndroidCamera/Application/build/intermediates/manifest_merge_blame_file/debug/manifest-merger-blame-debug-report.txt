@@ -26,47 +26,57 @@
 24    <uses-permission android:name="android.permission.CAMERA" />
 24-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:21:5-65
 24-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:21:22-62
-25    <uses-permission android:name="android.permission.INTERNET" />
-25-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:22:5-67
-25-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:22:22-64
-26
-27    <uses-feature android:name="android.hardware.camera" />
-27-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:24:5-60
-27-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:24:19-57
-28    <uses-feature android:name="android.hardware.camera.autofocus" />
-28-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:25:5-70
-28-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:25:19-67
-29
-30    <application
-30-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:27:5-39:19
-31        android:allowBackup="true"
-31-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:27:18-44
-32        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
-32-->[com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\612ef6e72b01f8d0ff3b0e7734e71386\support-compat-28.0.0\AndroidManifest.xml:22:18-91
-33        android:debuggable="true"
-34        android:icon="@drawable/ic_launcher"
-34-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:29:9-45
-35        android:label="@string/app_name"
-35-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:28:9-41
-36        android:theme="@style/MaterialTheme" >
-36-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:30:9-45
-37        <activity
-37-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:32:9-38:20
-38            android:name="com.viktor.vano.ip.camera.CameraActivity"
-38-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:32:19-74
-39            android:label="@string/app_name" >
-39-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:33:19-51
-40            <intent-filter>
-40-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:34:13-37:29
-41                <action android:name="android.intent.action.MAIN" />
-41-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:35:17-69
-41-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:35:25-66
-42
-43                <category android:name="android.intent.category.LAUNCHER" />
-43-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:36:17-77
-43-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:36:27-74
-44            </intent-filter>
-45        </activity>
-46    </application>
-47
-48</manifest>
+25    <uses-permission android:name="android.permission.FLASHLIGHT" />
+25-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:22:5-68
+25-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:22:22-66
+26    <uses-permission android:name="android.permission.INTERNET" />
+26-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:23:5-67
+26-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:23:22-64
+27
+28    <uses-feature android:name="android.hardware.camera" />
+28-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:25:5-60
+28-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:25:19-57
+29    <uses-feature android:name="android.hardware.camera2.params" />
+29-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:26:5-68
+29-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:26:19-65
+30    <uses-feature android:name="android.hardware.camera.autofocus" />
+30-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:27:5-70
+30-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:27:19-67
+31    <uses-feature android:name="android.hardware.camera.ar" />
+31-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:28:5-63
+31-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:28:19-60
+32
+33    <application
+33-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:30:5-42:19
+34        android:allowBackup="true"
+34-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:30:18-44
+35        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+35-->[com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\612ef6e72b01f8d0ff3b0e7734e71386\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+36        android:debuggable="true"
+37        android:icon="@drawable/ic_launcher"
+37-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:32:9-45
+38        android:label="@string/app_name"
+38-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:31:9-41
+39        android:testOnly="true"
+40        android:theme="@style/MaterialTheme" >
+40-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:33:9-45
+41        <activity
+41-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:35:9-41:20
+42            android:name="com.viktor.vano.ip.camera.CameraActivity"
+42-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:35:19-74
+43            android:label="@string/app_name" >
+43-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:36:19-51
+44            <intent-filter>
+44-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:37:13-40:29
+45                <action android:name="android.intent.action.MAIN" />
+45-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:38:17-69
+45-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:38:25-66
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+47-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:39:17-77
+47-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:39:27-74
+48            </intent-filter>
+49        </activity>
+50    </application>
+51
+52</manifest>

@@ -1,7 +1,7 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:18:1-41:12
-INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:18:1-41:12
+ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:18:1-44:12
+INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:18:1-44:12
 MERGED from [com.android.support:support-v13:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\9c9728222dfc67f885517235601c1970\support-v13-27.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\47e32f37ab355b99718ecfcebc034630\support-v4-27.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\df76c35ea8701f5bcda10f35bb1b673d\cardview-v7-27.1.1\AndroidManifest.xml:17:1-22:12
@@ -33,7 +33,7 @@ MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\vikto\.gradle\cache
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\c406aa8880a945c377b9fce0dbf5c738\livedata-core-1.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\1e40f40c6a82491f685c7d1cb8015c17\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\5adb86a6df1b1fb846294fc0bbf30123\interpolator-28.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:18:1-41:12
+INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:18:1-44:12
 	package
 		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:19:5-40
 		INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml
@@ -44,20 +44,32 @@ uses-permission#android.permission.CAMERA
 ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:21:5-65
 	android:name
 		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:21:22-62
+uses-permission#android.permission.FLASHLIGHT
+ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:22:5-68
+	android:name
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:22:22-66
 uses-permission#android.permission.INTERNET
-ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:22:5-67
+ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:22:22-64
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:23:22-64
 uses-feature#android.hardware.camera
-ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:24:5-60
+ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:25:5-60
 	android:name
-		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:24:19-57
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:25:19-57
+uses-feature#android.hardware.camera2.params
+ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:26:5-68
+	android:name
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:26:19-65
 uses-feature#android.hardware.camera.autofocus
-ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:25:5-70
+ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:27:5-70
 	android:name
-		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:25:19-67
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:27:19-67
+uses-feature#android.hardware.camera.ar
+ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:28:5-63
+	android:name
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:28:19-60
 application
-ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:27:5-39:19
+ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:30:5-42:19
 MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\76bb06ac16050042dd28f2f6517f7567\constraint-layout-2.0.4\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\76bb06ac16050042dd28f2f6517f7567\constraint-layout-2.0.4\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\612ef6e72b01f8d0ff3b0e7734e71386\support-compat-28.0.0\AndroidManifest.xml:22:5-94
@@ -67,29 +79,29 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vikto\.gra
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\612ef6e72b01f8d0ff3b0e7734e71386\support-compat-28.0.0\AndroidManifest.xml:22:18-91
 	android:label
-		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:28:9-41
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:31:9-41
 	android:icon
-		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:29:9-45
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:32:9-45
 	android:allowBackup
-		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:27:18-44
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:30:18-44
 	android:theme
-		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:30:9-45
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:33:9-45
 activity#com.viktor.vano.ip.camera.CameraActivity
-ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:32:9-38:20
+ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:35:9-41:20
 	android:label
-		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:33:19-51
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:36:19-51
 	android:name
-		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:32:19-74
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:35:19-74
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:34:13-37:29
+ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:37:13-40:29
 action#android.intent.action.MAIN
-ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:35:17-69
+ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:38:17-69
 	android:name
-		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:35:25-66
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:38:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:36:17-77
+ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:39:17-77
 	android:name
-		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:36:27-74
+		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:39:27-74
 uses-sdk
 INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml

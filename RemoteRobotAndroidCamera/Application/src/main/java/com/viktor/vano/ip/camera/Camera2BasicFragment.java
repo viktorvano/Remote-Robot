@@ -26,6 +26,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -457,6 +458,9 @@ public class Camera2BasicFragment extends Fragment
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
         mTextureView.setKeepScreenOn(true);
 
+        Activity activity = getActivity();
+        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         textViewIP = view.findViewById(R.id.textViewIP);
         editTextIP = view.findViewById(R.id.editTextIP);
         editTextIP.setText(stringIP);
@@ -479,7 +483,7 @@ public class Camera2BasicFragment extends Fragment
         Context context = view.getContext();
         context.registerReceiver(this.mBatInfoReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 
-        final ImageSender imageSender = new ImageSender(7770, updatePeriod-20);
+        final ImageSender imageSender = new ImageSender(7770, updatePeriod-8);
         imageSender.start();
         imageHandler.postDelayed(new Runnable() {
             @Override

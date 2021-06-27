@@ -27,7 +27,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 	ADC_Value = HAL_ADC_GetValue(&hadc1);
 	float currentVoltage = ((float)ADC_Value/4095.0f) * 3.3f * 3.0f * bulgarianVoltageConstant;
 	batteryVoltage = 0.99f*batteryVoltage + 0.01f*currentVoltage;
-	if((int)batteryVoltage <= 0)
+	if((int)percent <= 0)
 	{
 		halt();
 	}
@@ -106,6 +106,7 @@ void ESP_Server_Init()
 	HAL_Delay(2000);
 	ESP_Clear_Buffer();
 
+	//Change your WiFi SSID credentials below
 	HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n", strlen("AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n"), 100);
 }
 
@@ -281,6 +282,7 @@ void messageHandler()
 			&& (string_contains((char*)buffer, "FAIL", buffer_index) != -1
 			|| string_contains((char*)buffer, "DISCONNECT", buffer_index) != -1))
 	{
+		//Change your WiFi SSID credentials below
 		HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n", strlen("AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n"), 100);
 	}
 	ESP_Clear_Buffer();
@@ -313,6 +315,10 @@ void setSpeed(int position)
 
 void halt()
 {
+	HAL_ADC_Stop_IT(&hadc1);
+	HAL_TIM_Base_Stop_IT(&htim3);//20ms
+	HAL_TIM_Base_Stop_IT(&htim4);//58us
+	__HAL_UART_DISABLE_IT(&huart1, UART_IT_RXNE);
 	stopMotors();
 	while(1);
 }

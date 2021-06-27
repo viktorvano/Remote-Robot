@@ -12,3 +12,61 @@
 ![alt text](https://github.com/viktorvano/Remote-Robot/blob/main/Documents/schematics.png?raw=true)  
   
 ![alt text](https://github.com/viktorvano/Remote-Robot/blob/main/Documents/STM32F411CEU6.png?raw=true)  
+  
+  
+## Code Snippets
+  
+```C
+void ESP_Server_Init()
+{
+	ESP_RESET();
+	HAL_Delay(2000);
+	ESP_Clear_Buffer();
+
+	HAL_UART_Transmit(&huart1, (uint8_t*)"AT+RST\r\n", strlen("AT+RST\r\n"), 100);
+	HAL_Delay(1500);
+	ESP_Clear_Buffer();
+
+	HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CWMODE=1\r\n", strlen("AT+CWMODE=1\r\n"), 100);
+	HAL_Delay(2000);
+	ESP_Clear_Buffer();
+
+	HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CWDHCP=1,1\r\n", strlen("AT+CWDHCP=1,1\r\n"), 100);
+	HAL_Delay(2000);
+	ESP_Clear_Buffer();
+
+	HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CIPMUX=1\r\n", strlen("AT+CIPMUX=1\r\n"), 100);
+	HAL_Delay(2000);
+	ESP_Clear_Buffer();
+
+	HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CIPSERVER=1,80\r\n", strlen("AT+CIPSERVER=1,80\r\n"), 100);
+	HAL_Delay(2000);
+	ESP_Clear_Buffer();
+
+ //Change your WiFi SSID credentials below
+	HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n", strlen("AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n"), 100);
+}
+
+//and also here:
+void messageHandler()
+{
+	...else if(string_contains((char*)buffer, "+CWJAP:", buffer_index) != -1
+			&& (string_contains((char*)buffer, "FAIL", buffer_index) != -1
+			|| string_contains((char*)buffer, "DISCONNECT", buffer_index) != -1))
+	{
+		HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n", strlen("AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n"), 100);
+	}
+	ESP_Clear_Buffer();
+	__HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);
+}
+
+```  
+  
+Also you have to change stringSTM32IP:  
+```Java
+public class Variables {
+    public static String stringSTM32IP = "192.168.2.90";
+    public static int stm32StatusUpdatePeriod = 1000;
+    public static double distanceProgressRange = 200.0;
+}
+```

@@ -16,6 +16,7 @@
   
 ## Code Snippets
   
+You have to change your WiFi SSID credentials:  
 ```C
 void ESP_Server_Init()
 {
@@ -54,6 +55,7 @@ void messageHandler()
 			&& (string_contains((char*)buffer, "FAIL", buffer_index) != -1
 			|| string_contains((char*)buffer, "DISCONNECT", buffer_index) != -1))
 	{
+		//Change your WiFi SSID credentials below
 		HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n", strlen("AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n"), 100);
 	}
 	ESP_Clear_Buffer();

@@ -21,7 +21,7 @@ STM32 Pinout:
   
 ## Code Snippets
   
-You have to change your WiFi SSID credentials:  
+[STM32 C code] You have to change your WiFi SSID credentials:  
 ```C
 void ESP_Server_Init()
 {
@@ -69,7 +69,7 @@ void messageHandler()
 
 ```  
   
-Also you have to change stringSTM32IP:  
+[Java Desktop App] Also you have to change stringSTM32IP:  
 ```Java
 public class Variables {
     public static String stringSTM32IP = "192.168.2.90";

@@ -5,13 +5,17 @@
 
 ![alt text](https://github.com/viktorvano/Remote-Robot/blob/main/Documents/IMG_20210620_173554_845.jpg?raw=true)  
   
-Use WASD to move around, QWERTY digits (1,2,3...,9,0) to set the speed (power) from 10% (1) to 100% (0) and R to toggle Driving Assintance.
+## Java Desktop App  
+- Use WASD to move around  
+- QWERTY digits (1,2,3...,9,0) to set the speed (power) from 10% (1) to 100% (0)
+- R to toggle Driving Assintance
 ![alt text](https://github.com/viktorvano/Remote-Robot/blob/main/Documents/app_screenshot.png?raw=true)  
      
    
  ## Wiring Diagram
 ![alt text](https://github.com/viktorvano/Remote-Robot/blob/main/Documents/schematics.png?raw=true)  
   
+STM32 Pinout:  
 ![alt text](https://github.com/viktorvano/Remote-Robot/blob/main/Documents/STM32F411CEU6.png?raw=true)  
   
   

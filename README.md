@@ -69,6 +69,21 @@ void messageHandler()
 }
 
 ```  
+[STM32 C code] Calculating the battery percentage:
+- You have to list all voltege regulators and components that are connected directly to the battery
+- Find out their lowest voltage needed to run (or regulate) properly
+- The highest low voltage will be a 0% of the battery for you (in this case minVoltage = 6.0V)
+- The 2 cell Lithium battery has voltage range 6.0V to 8.4V (voltageRange = 2.4V)
+- Extimate the voltagedrop due to current load (voltageDrop = 0.05V)
+- Formula: pervcentage = ((batteryVoltage - minVoltage) / (voltageRange - voltageDrop))*100.0f;
+```C
+void calculateBattery()
+{
+	percent = ((batteryVoltage-6.0f) / 2.35f)*100.0f;
+	if(percent > 100.0f)
+		percent = 100.0f;
+}
+```
   
 [Java Desktop App] Also you have to change stringSTM32IP:  
 ```Java

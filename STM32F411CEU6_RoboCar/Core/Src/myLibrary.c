@@ -18,7 +18,7 @@ uint32_t ADC_Value = 0;
 uint8_t buffer[2000];
 uint16_t buffer_index = 0, timeout = 0, messageHandlerFlag = 0, netTimeout = 0;
 uint8_t oneSecondFlag = 0;
-float percent;
+float percent = 100;
 uint8_t speed = 0;
 uint32_t safeCounter = 0;
 

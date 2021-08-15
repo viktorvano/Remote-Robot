@@ -1,6 +1,5 @@
 package com.viktor.vano.robot.controller;
 
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -25,6 +24,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.*;
 
+import static com.viktor.vano.robot.controller.FileManager.readOrCreateFile;
 import static com.viktor.vano.robot.controller.Variables.*;
 
 public class RobotController extends Application {
@@ -59,6 +59,8 @@ public class RobotController extends Application {
     public void start(Stage stage){
         final int width = 1600;
         final int height = 1000;
+
+        stringSTM32IP = readOrCreateFile("IP_STM32.txt");
 
         pane = new Pane();
 

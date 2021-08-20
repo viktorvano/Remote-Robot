@@ -85,7 +85,9 @@ void calculateBattery()
 }
 ```
   
-[Java Desktop App] Also you have to change stringSTM32IP:  
+[Java Desktop App] Also you have to change the IP address in "IP_STM32.txt" file,   
+which is automatically generated if does not exist and the JAR app is launched.  
+The default IP address in the file is defined here stringSTM32IP = "192.168.2.90"; in the Variables class.  
 ```Java
 public class Variables {
     public static String stringSTM32IP = "192.168.2.90";

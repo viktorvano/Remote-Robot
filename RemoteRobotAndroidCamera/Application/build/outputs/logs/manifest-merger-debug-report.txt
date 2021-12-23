@@ -2,37 +2,37 @@
 manifest
 ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:18:1-44:12
 INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:18:1-44:12
-MERGED from [com.android.support:support-v13:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\9c9728222dfc67f885517235601c1970\support-v13-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\47e32f37ab355b99718ecfcebc034630\support-v4-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\df76c35ea8701f5bcda10f35bb1b673d\cardview-v7-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\76bb06ac16050042dd28f2f6517f7567\constraint-layout-2.0.4\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\88a2d0bfff227656eb0e5d0d3da6ffec\appcompat-v7-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\46392c0e1e17c316709d91d0ac05dde3\support-media-compat-27.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\1c2cb9a4aaf248e24f46f582d155b513\support-fragment-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\8368533c567dfbf56ef263fe9e9b4f61\animated-vector-drawable-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\c8e786305c3abd5b355b6e214dcc0339\support-core-ui-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\22ee8ebb170846cf3819346c66ef7721\support-core-utils-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\823246e80b81b24128a6bddac5127260\support-vector-drawable-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:loader:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\7c8f653bf663170e1289442497d32a0e\loader-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\7ee1f06c84fd6c612db90ae3742d70c1\viewpager-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\6132ae052cfab740a055d8a8ec2c2918\coordinatorlayout-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\f563213677c4f628d90d659df1075721\drawerlayout-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\9657951b89b47a8c2c5ac23185719afd\slidingpanelayout-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:customview:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\9344dff240e33d6b67c71548e62e62ab\customview-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\ebb89ef1622acd2cd9056a5ed5b871c2\swiperefreshlayout-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\34d14076504c76822e790178cff81f38\asynclayoutinflater-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\612ef6e72b01f8d0ff3b0e7734e71386\support-compat-28.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\5af537d9eff28604869470de94f2ad4a\versionedparcelable-28.0.0\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\a0d6186a06525f86ff5229adaaf17235\cursoradapter-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\f6dc15b1d1c197326e80a2a8d86007b6\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\6e1f6e5782c2489f647cd4d360b8a026\documentfile-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\7c330888b4d4ecc1c79b8080b52509c7\localbroadcastmanager-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:print:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\39c3214f039a593b8e1973b7fb5a50cf\print-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\2c65c7d5b9168584c2d5a7c01b0e8f8c\viewmodel-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\a93e472ac81392ed7a63e921cb6a4dad\livedata-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\c406aa8880a945c377b9fce0dbf5c738\livedata-core-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\1e40f40c6a82491f685c7d1cb8015c17\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\5adb86a6df1b1fb846294fc0bbf30123\interpolator-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v13:27.1.1] C:\Users\vikto\.gradle\caches\transforms-3\8963262bba2c222b59f36f5658476cd2\transformed\support-v13-27.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\vikto\.gradle\caches\transforms-3\9cec93a13d8cab9f82ad814107bc612e\transformed\support-v4-27.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\vikto\.gradle\caches\transforms-3\bf7b73619012c7bf0d5ec7590a722625\transformed\cardview-v7-27.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\vikto\.gradle\caches\transforms-3\3fc76310c355d9d6026ca418f2ab1ea7\transformed\constraint-layout-2.0.4\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\1a3b0a41101286a4e4403084b915f3d4\transformed\appcompat-v7-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\vikto\.gradle\caches\transforms-3\87e68378c3ec59d20a327f2af34483c1\transformed\support-media-compat-27.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\9ab465aff583f5646e618a72256d32be\transformed\support-fragment-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\5be656762f626c3c8bdaca9d9498db40\transformed\animated-vector-drawable-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\c9a7d4393f09377137f5014f8b7a5522\transformed\support-core-ui-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\23c3607633da8e1514adf9e4616cb381\transformed\support-core-utils-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\9212bf05b6d635abf3b8c3513c45276f\transformed\support-vector-drawable-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\f3436f7a509a01cb0fd9fb40891730a4\transformed\loader-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\a88a27a49cbb122369a0375ee2eb112a\transformed\viewpager-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\88a4a27a33c13eee0f73717140079ab7\transformed\coordinatorlayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\57e485f62d6129228d118526e3542f67\transformed\drawerlayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\76ba43b4bf594204709aa27872a4c9b7\transformed\slidingpanelayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\bde49d20c5f0b3b02b0f79992d6756f5\transformed\customview-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\3501cc8a38f3b2bf674d383915222500\transformed\swiperefreshlayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\4b154e4115db90c5c9498d5c78beaebf\transformed\asynclayoutinflater-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\eaec1088239ec2bcfaac7d809f3bb425\transformed\support-compat-28.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\6c00032b5980c73be2bcd520db2e92cc\transformed\versionedparcelable-28.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\fc1a925c99a1526cbf79d9ba953f2861\transformed\cursoradapter-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\2652c17a6d11b2a93bcaae48eed11557\transformed\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\30bb068d1cf92818aea345fbbd85db81\transformed\documentfile-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\8741b88b6a2f99a7551f2fca6f480637\transformed\localbroadcastmanager-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\88f2e3da123f9179d11e98bd9b47bb3e\transformed\print-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\5498d064392cd2ff3832af05753064a0\transformed\viewmodel-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\a9b5155115bdd50d77814f116d6b3365\transformed\livedata-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\04a9cdd83063c327db2705114b722f8b\transformed\livedata-core-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\89aed2d1364a3bdb4fbf875ea066a12b\transformed\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\06fb446cf8a4ea7f970c6c2c19f37df3\transformed\interpolator-28.0.0\AndroidManifest.xml:17:1-22:12
 INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:18:1-44:12
 	package
 		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:19:5-40
@@ -70,14 +70,14 @@ ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application
 		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:28:19-60
 application
 ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:30:5-42:19
-MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\76bb06ac16050042dd28f2f6517f7567\constraint-layout-2.0.4\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\76bb06ac16050042dd28f2f6517f7567\constraint-layout-2.0.4\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\612ef6e72b01f8d0ff3b0e7734e71386\support-compat-28.0.0\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\612ef6e72b01f8d0ff3b0e7734e71386\support-compat-28.0.0\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\5af537d9eff28604869470de94f2ad4a\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\5af537d9eff28604869470de94f2ad4a\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\vikto\.gradle\caches\transforms-3\3fc76310c355d9d6026ca418f2ab1ea7\transformed\constraint-layout-2.0.4\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\vikto\.gradle\caches\transforms-3\3fc76310c355d9d6026ca418f2ab1ea7\transformed\constraint-layout-2.0.4\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\eaec1088239ec2bcfaac7d809f3bb425\transformed\support-compat-28.0.0\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\eaec1088239ec2bcfaac7d809f3bb425\transformed\support-compat-28.0.0\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\6c00032b5980c73be2bcd520db2e92cc\transformed\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\6c00032b5980c73be2bcd520db2e92cc\transformed\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
 	android:appComponentFactory
-		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\612ef6e72b01f8d0ff3b0e7734e71386\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\eaec1088239ec2bcfaac7d809f3bb425\transformed\support-compat-28.0.0\AndroidManifest.xml:22:18-91
 	android:label
 		ADDED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:31:9-41
 	android:icon
@@ -106,68 +106,68 @@ uses-sdk
 INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml
 INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml
-MERGED from [com.android.support:support-v13:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\9c9728222dfc67f885517235601c1970\support-v13-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v13:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\9c9728222dfc67f885517235601c1970\support-v13-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\47e32f37ab355b99718ecfcebc034630\support-v4-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\47e32f37ab355b99718ecfcebc034630\support-v4-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\df76c35ea8701f5bcda10f35bb1b673d\cardview-v7-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\df76c35ea8701f5bcda10f35bb1b673d\cardview-v7-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\76bb06ac16050042dd28f2f6517f7567\constraint-layout-2.0.4\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\76bb06ac16050042dd28f2f6517f7567\constraint-layout-2.0.4\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\88a2d0bfff227656eb0e5d0d3da6ffec\appcompat-v7-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\88a2d0bfff227656eb0e5d0d3da6ffec\appcompat-v7-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\46392c0e1e17c316709d91d0ac05dde3\support-media-compat-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\46392c0e1e17c316709d91d0ac05dde3\support-media-compat-27.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\1c2cb9a4aaf248e24f46f582d155b513\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\1c2cb9a4aaf248e24f46f582d155b513\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\8368533c567dfbf56ef263fe9e9b4f61\animated-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\8368533c567dfbf56ef263fe9e9b4f61\animated-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\c8e786305c3abd5b355b6e214dcc0339\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\c8e786305c3abd5b355b6e214dcc0339\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\22ee8ebb170846cf3819346c66ef7721\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\22ee8ebb170846cf3819346c66ef7721\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\823246e80b81b24128a6bddac5127260\support-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\823246e80b81b24128a6bddac5127260\support-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\7c8f653bf663170e1289442497d32a0e\loader-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\7c8f653bf663170e1289442497d32a0e\loader-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\7ee1f06c84fd6c612db90ae3742d70c1\viewpager-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\7ee1f06c84fd6c612db90ae3742d70c1\viewpager-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\6132ae052cfab740a055d8a8ec2c2918\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\6132ae052cfab740a055d8a8ec2c2918\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\f563213677c4f628d90d659df1075721\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\f563213677c4f628d90d659df1075721\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\9657951b89b47a8c2c5ac23185719afd\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\9657951b89b47a8c2c5ac23185719afd\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\9344dff240e33d6b67c71548e62e62ab\customview-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\9344dff240e33d6b67c71548e62e62ab\customview-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\ebb89ef1622acd2cd9056a5ed5b871c2\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\ebb89ef1622acd2cd9056a5ed5b871c2\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\34d14076504c76822e790178cff81f38\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\34d14076504c76822e790178cff81f38\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\612ef6e72b01f8d0ff3b0e7734e71386\support-compat-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\612ef6e72b01f8d0ff3b0e7734e71386\support-compat-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\5af537d9eff28604869470de94f2ad4a\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\5af537d9eff28604869470de94f2ad4a\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\a0d6186a06525f86ff5229adaaf17235\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\a0d6186a06525f86ff5229adaaf17235\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\f6dc15b1d1c197326e80a2a8d86007b6\runtime-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\f6dc15b1d1c197326e80a2a8d86007b6\runtime-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\6e1f6e5782c2489f647cd4d360b8a026\documentfile-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\6e1f6e5782c2489f647cd4d360b8a026\documentfile-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\7c330888b4d4ecc1c79b8080b52509c7\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\7c330888b4d4ecc1c79b8080b52509c7\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\39c3214f039a593b8e1973b7fb5a50cf\print-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\39c3214f039a593b8e1973b7fb5a50cf\print-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\2c65c7d5b9168584c2d5a7c01b0e8f8c\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\2c65c7d5b9168584c2d5a7c01b0e8f8c\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\a93e472ac81392ed7a63e921cb6a4dad\livedata-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\a93e472ac81392ed7a63e921cb6a4dad\livedata-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\c406aa8880a945c377b9fce0dbf5c738\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\c406aa8880a945c377b9fce0dbf5c738\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\1e40f40c6a82491f685c7d1cb8015c17\runtime-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\1e40f40c6a82491f685c7d1cb8015c17\runtime-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\5adb86a6df1b1fb846294fc0bbf30123\interpolator-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\5adb86a6df1b1fb846294fc0bbf30123\interpolator-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v13:27.1.1] C:\Users\vikto\.gradle\caches\transforms-3\8963262bba2c222b59f36f5658476cd2\transformed\support-v13-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v13:27.1.1] C:\Users\vikto\.gradle\caches\transforms-3\8963262bba2c222b59f36f5658476cd2\transformed\support-v13-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\vikto\.gradle\caches\transforms-3\9cec93a13d8cab9f82ad814107bc612e\transformed\support-v4-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\vikto\.gradle\caches\transforms-3\9cec93a13d8cab9f82ad814107bc612e\transformed\support-v4-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\vikto\.gradle\caches\transforms-3\bf7b73619012c7bf0d5ec7590a722625\transformed\cardview-v7-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\vikto\.gradle\caches\transforms-3\bf7b73619012c7bf0d5ec7590a722625\transformed\cardview-v7-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\vikto\.gradle\caches\transforms-3\3fc76310c355d9d6026ca418f2ab1ea7\transformed\constraint-layout-2.0.4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\vikto\.gradle\caches\transforms-3\3fc76310c355d9d6026ca418f2ab1ea7\transformed\constraint-layout-2.0.4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\1a3b0a41101286a4e4403084b915f3d4\transformed\appcompat-v7-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\1a3b0a41101286a4e4403084b915f3d4\transformed\appcompat-v7-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\vikto\.gradle\caches\transforms-3\87e68378c3ec59d20a327f2af34483c1\transformed\support-media-compat-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\vikto\.gradle\caches\transforms-3\87e68378c3ec59d20a327f2af34483c1\transformed\support-media-compat-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\9ab465aff583f5646e618a72256d32be\transformed\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\9ab465aff583f5646e618a72256d32be\transformed\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\5be656762f626c3c8bdaca9d9498db40\transformed\animated-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\5be656762f626c3c8bdaca9d9498db40\transformed\animated-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\c9a7d4393f09377137f5014f8b7a5522\transformed\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\c9a7d4393f09377137f5014f8b7a5522\transformed\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\23c3607633da8e1514adf9e4616cb381\transformed\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\23c3607633da8e1514adf9e4616cb381\transformed\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\9212bf05b6d635abf3b8c3513c45276f\transformed\support-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\9212bf05b6d635abf3b8c3513c45276f\transformed\support-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\f3436f7a509a01cb0fd9fb40891730a4\transformed\loader-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\f3436f7a509a01cb0fd9fb40891730a4\transformed\loader-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\a88a27a49cbb122369a0375ee2eb112a\transformed\viewpager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\a88a27a49cbb122369a0375ee2eb112a\transformed\viewpager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\88a4a27a33c13eee0f73717140079ab7\transformed\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\88a4a27a33c13eee0f73717140079ab7\transformed\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\57e485f62d6129228d118526e3542f67\transformed\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\57e485f62d6129228d118526e3542f67\transformed\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\76ba43b4bf594204709aa27872a4c9b7\transformed\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\76ba43b4bf594204709aa27872a4c9b7\transformed\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\bde49d20c5f0b3b02b0f79992d6756f5\transformed\customview-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\bde49d20c5f0b3b02b0f79992d6756f5\transformed\customview-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\3501cc8a38f3b2bf674d383915222500\transformed\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\3501cc8a38f3b2bf674d383915222500\transformed\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\4b154e4115db90c5c9498d5c78beaebf\transformed\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\4b154e4115db90c5c9498d5c78beaebf\transformed\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\eaec1088239ec2bcfaac7d809f3bb425\transformed\support-compat-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\eaec1088239ec2bcfaac7d809f3bb425\transformed\support-compat-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\6c00032b5980c73be2bcd520db2e92cc\transformed\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\6c00032b5980c73be2bcd520db2e92cc\transformed\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\fc1a925c99a1526cbf79d9ba953f2861\transformed\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\fc1a925c99a1526cbf79d9ba953f2861\transformed\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\2652c17a6d11b2a93bcaae48eed11557\transformed\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\2652c17a6d11b2a93bcaae48eed11557\transformed\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\30bb068d1cf92818aea345fbbd85db81\transformed\documentfile-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\30bb068d1cf92818aea345fbbd85db81\transformed\documentfile-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\8741b88b6a2f99a7551f2fca6f480637\transformed\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\8741b88b6a2f99a7551f2fca6f480637\transformed\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\88f2e3da123f9179d11e98bd9b47bb3e\transformed\print-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\88f2e3da123f9179d11e98bd9b47bb3e\transformed\print-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\5498d064392cd2ff3832af05753064a0\transformed\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\5498d064392cd2ff3832af05753064a0\transformed\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\a9b5155115bdd50d77814f116d6b3365\transformed\livedata-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\a9b5155115bdd50d77814f116d6b3365\transformed\livedata-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\04a9cdd83063c327db2705114b722f8b\transformed\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\04a9cdd83063c327db2705114b722f8b\transformed\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\89aed2d1364a3bdb4fbf875ea066a12b\transformed\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\vikto\.gradle\caches\transforms-3\89aed2d1364a3bdb4fbf875ea066a12b\transformed\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\06fb446cf8a4ea7f970c6c2c19f37df3\transformed\interpolator-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\06fb446cf8a4ea7f970c6c2c19f37df3\transformed\interpolator-28.0.0\AndroidManifest.xml:20:5-44
 INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml
 INJECTED from D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml
 	android:targetSdkVersion

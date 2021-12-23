@@ -51,7 +51,7 @@
 34        android:allowBackup="true"
 34-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:30:18-44
 35        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
-35-->[com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-2\files-2.1\612ef6e72b01f8d0ff3b0e7734e71386\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+35-->[com.android.support:support-compat:28.0.0] C:\Users\vikto\.gradle\caches\transforms-3\eaec1088239ec2bcfaac7d809f3bb425\transformed\support-compat-28.0.0\AndroidManifest.xml:22:18-91
 36        android:debuggable="true"
 37        android:icon="@drawable/ic_launcher"
 37-->D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\AndroidManifest.xml:32:9-45

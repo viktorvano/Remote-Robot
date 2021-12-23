@@ -4,7 +4,18 @@
             "outputFile": "D:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\vikto\\.gradle\\caches\\transforms-2\\files-2.1\\df76c35ea8701f5bcda10f35bb1b673d\\cardview-v7-27.1.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\vikto\\.gradle\\caches\\transforms-3\\1a3b0a41101286a4e4403084b915f3d4\\transformed\\appcompat-v7-28.0.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,19,32,33,34,35,36",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,190,325,400,487,1277,2079,2206,2311,2426,2533",
+                        "endLines": "2,3,4,5,18,31,32,33,34,35,36",
+                        "endColumns": "134,134,74,86,12,12,126,104,114,106,112",
+                        "endOffsets": "185,320,395,482,1272,2074,2201,2306,2421,2528,2641"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vikto\\.gradle\\caches\\transforms-3\\bf7b73619012c7bf0d5ec7590a722625\\transformed\\cardview-v7-27.1.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,17 +31,6 @@
                         "endLines": "39",
                         "endColumns": "12",
                         "endOffsets": "2791"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vikto\\.gradle\\caches\\transforms-2\\files-2.1\\88a2d0bfff227656eb0e5d0d3da6ffec\\appcompat-v7-28.0.0\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,19,32,33,34,35,36",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,190,325,400,487,1277,2079,2206,2311,2426,2533",
-                        "endLines": "2,3,4,5,18,31,32,33,34,35,36",
-                        "endColumns": "134,134,74,86,12,12,126,104,114,106,112",
-                        "endOffsets": "185,320,395,482,1272,2074,2201,2306,2421,2528,2641"
                     }
                 }
             ]

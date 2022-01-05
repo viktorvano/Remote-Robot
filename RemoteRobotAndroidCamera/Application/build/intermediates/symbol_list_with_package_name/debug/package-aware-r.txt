@@ -889,7 +889,6 @@ id dragUp
 id easeIn
 id easeInOut
 id easeOut
-id editTextIP
 id edit_query
 id end
 id end_padder
@@ -972,7 +971,6 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
-id set
 id shortcut
 id showCustom
 id showHome
@@ -1005,7 +1003,6 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
-id textViewIP
 id texture
 id time
 id title

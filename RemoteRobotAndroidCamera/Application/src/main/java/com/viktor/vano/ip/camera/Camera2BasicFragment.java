@@ -104,9 +104,6 @@ public class Camera2BasicFragment extends Fragment
     private final Handler imageHandler = new Handler();
     private final Handler statusHandler = new Handler();
     private StringSenderServer stringSenderServer;
-    private Button buttonSet;
-    private TextView textViewIP;
-    private EditText editTextIP;
 
     private BroadcastReceiver mBatInfoReceiver = new BroadcastReceiver(){
         @Override
@@ -461,25 +458,6 @@ public class Camera2BasicFragment extends Fragment
         Activity activity = getActivity();
         activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        textViewIP = view.findViewById(R.id.textViewIP);
-        editTextIP = view.findViewById(R.id.editTextIP);
-        editTextIP.setText(stringIP);
-        buttonSet = view.findViewById(R.id.set);
-        buttonSet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String ip = editTextIP.getText().toString();
-                if(ip.contains("."))
-                {
-                    Variables.stringIP = ip;
-                    textViewIP.setText(Variables.stringIP + " " + Variables.batteryPct + "%");
-                }else
-                {
-                    textViewIP.setText("Wrong IP!!! " + Variables.batteryPct + "%");
-                }
-            }
-        });
-
         Context context = view.getContext();
         context.registerReceiver(this.mBatInfoReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 
@@ -518,13 +496,6 @@ public class Camera2BasicFragment extends Fragment
             public void run()
             {
                 statusHandler.postDelayed(this, 1000);
-                if(Variables.stringIP.contains("."))
-                {
-                    textViewIP.setText(Variables.stringIP + " " + Variables.batteryPct + "%");
-                }else
-                {
-                    textViewIP.setText("Wrong IP!!! " + Variables.batteryPct + "%");
-                }
                 stringSenderServer.updateResponseMessage("Android Battery: " + Variables.batteryPct + "%");
             }
         }, 1000);

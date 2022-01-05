@@ -43,7 +43,7 @@ public class ImageSender extends Thread{
                     // need host and port, we want to connect to the ServerSocket at port 7777
                     Socket socket = new Socket();
                     socket.setSoTimeout(230);
-                    socket.connect(new InetSocketAddress(Variables.stringIP, port), timeout);
+                    socket.connect(new InetSocketAddress("12.16.44.26", port), timeout);
                     System.out.println("Connected!");
 
                     // get the output stream from the socket.

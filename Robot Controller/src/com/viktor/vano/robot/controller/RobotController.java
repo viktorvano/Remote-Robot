@@ -32,8 +32,8 @@ public class RobotController extends Application {
     private int length = 0;
     private Label androidLabel;
     private Timeline timeline, timelineSend;
-    private CameraServer myCameraServer;
-    private MyServer androidServer;
+    private AndroidCamera myAndroidCamera;
+    private AndroidBatteryClient androidBatteryClient;
     private ImageView imageViewCamera;
     private Image imageCamera;
     private boolean updateImage = false;
@@ -97,11 +97,11 @@ public class RobotController extends Application {
         imageViewCamera.setPreserveRatio(true);
         pane.getChildren().add(imageViewCamera);
 
-        myCameraServer = new CameraServer(cameraPort);
-        myCameraServer.start();
+        myAndroidCamera = new AndroidCamera(cameraPort);
+        myAndroidCamera.start();
 
-        androidServer = new MyServer(cameraPort+1);
-        androidServer.start();
+        androidBatteryClient = new AndroidBatteryClient("192.168.1.26",cameraPort+1);
+        androidBatteryClient.start();
 
         try{
             imageViewCarLogo = new ImageView(new Image("com/viktor/vano/robot/controller/images/car.jpg"));
@@ -264,9 +264,9 @@ public class RobotController extends Application {
 
         timeline = new Timeline(new KeyFrame(Duration.millis(10), event ->{
             updateImage();
-            if(androidServer.isMessageReceived())
+            if(androidBatteryClient.isMessageReceived())
             {
-                androidLabel.setText(androidServer.getMessage());
+                androidLabel.setText(androidBatteryClient.getMessage());
             }
 
             labelDirection.setText("Forward: " + forward +
@@ -328,8 +328,8 @@ public class RobotController extends Application {
     @Override
     public void stop() throws Exception {
         super.stop();
-        myCameraServer.stopServer();
-        androidServer.stopServer();
+        myAndroidCamera.stopServer();
+        androidBatteryClient.stopServer();
         stm32ClientRemoteControl.stopClient();
         stm32Status.stopSTM32Status();
         System.out.println("Closing the application.");
@@ -360,90 +360,120 @@ public class RobotController extends Application {
         }
     }
 
-    class CameraServer extends Thread{
+    class AndroidCamera extends Thread{
         private boolean active = true;
         private int port = 0;
-        private ServerSocket ss;
+
+        // initialize socket and input output streams
+        private Socket socket		 = null;
+        private DataOutputStream out	 = null;
+        private DataInputStream in	 = null;
 
         public void stopServer(){
             this.active = false;
             try {
-                ss.close();
+                socket.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
 
-        public CameraServer(int port){
+        public AndroidCamera(int port){
             this.port = port;
         }
 
         @Override
         public void run() {
             super.run();
-            ss = null;
-            try {
-                ss = new ServerSocket(port);
-            } catch (IOException e) {
-                e.printStackTrace();
-                active = false;
-            }
-
-            if (ss == null)
-            {
-                System.exit(-99);
-            }
             System.out.println("ServerSocket awaiting connections...");
-            Socket socket = null;// = ss.accept(); // blocking call, this will wait until a connection is attempted on this port.
             while (active)
             {
-                try {
-                    socket = ss.accept(); // blocking call, this will wait until a connection is attempted on this port.
-                    System.out.println("Connection from " + socket + "!");
-
-                    // get the input stream from the connected socket
-                    InputStream inputStream = null;
-                    try {
-                        assert socket != null;
-                        inputStream = socket.getInputStream();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    // create a DataInputStream so we can read data from it.
-                    assert inputStream != null;
-                    DataInputStream dataInputStream = new DataInputStream(inputStream);
-
-                    // read the message from the socket
-                    try {
-                        //length = dataInputStream.read(data);
-                        length = dataInputStream.readInt();
-                        System.out.println("Got the Size");
-                        int bytesRead ;
-                        int len = 0;
-                        byte[] buffer = new byte[1000000];
-                        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                        while (len<length)
-                        {
-                            bytesRead = inputStream.read(buffer, 0, (int)Math.min(buffer.length, length-len));
-                            len = len + bytesRead;
-                            byteArrayOutputStream.write(buffer, 0, bytesRead);
-                        }
-                        byteArray = byteArrayOutputStream.toByteArray();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    if(length > 5000)
-                        updateImage = true;
-                }catch (SocketTimeoutException e)
+                getData("192.168.1.26", port);
+                try
                 {
-                    System.out.println("Socket timed out");
-                } catch (Exception e) {
-                    System.out.println("Something went wrong.");
-                    e.printStackTrace();
+                    Thread.sleep(50);
+                }catch (Exception e)
+                {
+                    System.out.println("Cannot sleep 50 millis");
                 }
             }
             System.out.println("Server stopped successfully.");
+        }
+
+        public void getData(String address, int port)
+        {
+            // establish a connection
+            try
+            {
+                socket = new Socket(address, port);
+                System.out.println("Connected");
+
+                // takes input from terminal
+                //input = new DataInputStream(System.in);
+
+                // sends output to the socket
+                out = new DataOutputStream(socket.getOutputStream());
+            }
+            catch(UnknownHostException u)
+            {
+                System.out.println(u);
+            }
+            catch(IOException i)
+            {
+                System.out.println(i);
+            }
+
+            // string to read message from input
+            String line = "photo";
+
+            try
+            {
+                out.writeUTF(line);
+                in = new DataInputStream(
+                        new BufferedInputStream(socket.getInputStream()));
+                // read the message from the socket
+                try
+                {
+                    //length = dataInputStream.read(data);
+                    length = in.readInt();
+                    System.out.println("Got the Size: " + length);
+                    int bytesRead ;
+                    int len = 0;
+                    byte[] buffer = new byte[1000000];
+                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                    while (len<length)
+                    {
+                        bytesRead = in.read(buffer, 0, (int)Math.min(buffer.length, length-len));
+                        len = len + bytesRead;
+                        byteArrayOutputStream.write(buffer, 0, bytesRead);
+                    }
+                    byteArray = byteArrayOutputStream.toByteArray();
+                    System.out.println("PHOTO DATA LENGTH: " + byteArray.length);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                if(length > 5000)
+                    updateImage = true;
+
+            }
+            catch(IOException i)
+            {
+                System.out.println(i);
+            }
+
+            // close the connection
+            try
+            {
+                //input.close();
+                in.close();
+                out.close();
+                socket.close();
+            }
+            catch(IOException i)
+            {
+                System.out.println(i);
+            }
         }
     }
 }

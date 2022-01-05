@@ -103,7 +103,7 @@ public class Camera2BasicFragment extends Fragment
 
     private final Handler imageHandler = new Handler();
     private final Handler statusHandler = new Handler();
-    private StringSender stringSender;
+    private StringSenderServer stringSenderServer;
     private Button buttonSet;
     private TextView textViewIP;
     private EditText editTextIP;
@@ -483,13 +483,16 @@ public class Camera2BasicFragment extends Fragment
         Context context = view.getContext();
         context.registerReceiver(this.mBatInfoReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 
-        final ImageSender imageSender = new ImageSender(7770, updatePeriod-8);
-        imageSender.start();
+        final CameraServer cameraServer = new CameraServer(7770);
+        cameraServer.start();
+        //final ImageSender imageSender = new ImageSender(7770, updatePeriod-8);
+        //imageSender.start();
         imageHandler.postDelayed(new Runnable() {
             @Override
             public void run()
             {
                 imageHandler.postDelayed(this, updatePeriod);
+                if(mTextureView.getBitmap()!=null)
                 try{
                     Bitmap bitmap = mTextureView.getBitmap();
                     int width = bitmap.getHeight();
@@ -498,7 +501,8 @@ public class Camera2BasicFragment extends Fragment
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
                     byte array [] = baos.toByteArray();
-                    imageSender.sendImageToServer(array);
+                    //imageSender.sendImageToServer(array);
+                    cameraServer.updateImage(array);
                 }catch (Exception e)
                 {
                     e.printStackTrace();
@@ -506,8 +510,8 @@ public class Camera2BasicFragment extends Fragment
             }
         }, updatePeriod);
 
-        stringSender = new StringSender(7771);
-        stringSender.start();
+        stringSenderServer = new StringSenderServer(7771);
+        stringSenderServer.start();
         statusHandler.postDelayed(new Runnable() {
             @SuppressLint("MissingPermission")
             @Override
@@ -521,7 +525,7 @@ public class Camera2BasicFragment extends Fragment
                 {
                     textViewIP.setText("Wrong IP!!! " + Variables.batteryPct + "%");
                 }
-                stringSender.send("Android Battery: " + Variables.batteryPct + "%");
+                stringSenderServer.updateResponseMessage("Android Battery: " + Variables.batteryPct + "%");
             }
         }, 1000);
     }

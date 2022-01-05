@@ -1,10 +1,12 @@
 package com.viktor.vano.ip.camera;
 
 import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -62,26 +64,28 @@ public class CameraServer extends Thread{
                 socket = server.accept();
                 System.out.println("Client accepted");
 
-                // takes input from the client socket
-                in = new DataInputStream(
-                        new BufferedInputStream(socket.getInputStream()));
-
-                String line = "";
-
                 try
                 {
-                    //line = in.readUTF();
-                    //System.out.println(line);
-                    try
+                    // get the output stream from the socket.
+                    OutputStream outputStream = socket.getOutputStream();
+                    // create a data output stream from the output stream so we can send data through it
+                    DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
+
+                    System.out.println("Sending string to the ServerSocket");
+
+                    // write the message we want to send
+                    InputStream inn = new ByteArrayInputStream(data);
+                    dataOutputStream.writeInt(data.length);
+                    int len = 0;
+                    //dataOutputStream.write(data);
+                    byte [] b = new byte [1024];
+                    while ((len = inn.read(b)) != -1)
                     {
-                        Thread.sleep(5);
-                    }catch (Exception e)
-                    {
-                        System.out.println("Cannot sleep 5 millis");
+                        dataOutputStream.write(b,0,len);
                     }
-                    out = new DataOutputStream(socket.getOutputStream());
-                    //out.write(this.data);
-                    out.writeUTF("asdfghjklzxcvbnm YES");
+                    dataOutputStream.flush(); // send the message
+                    dataOutputStream.close(); // close the output stream when we're done.
+
                 }
                 catch(IOException i)
                 {

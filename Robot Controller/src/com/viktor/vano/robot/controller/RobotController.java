@@ -367,7 +367,6 @@ public class RobotController extends Application {
 
         // initialize socket and input output streams
         private Socket socket		 = null;
-        private DataOutputStream out	 = null;
         private DataInputStream in	 = null;
 
         public void stopServer(){
@@ -412,8 +411,6 @@ public class RobotController extends Application {
                 // takes input from terminal
                 //input = new DataInputStream(System.in);
 
-                // sends output to the socket
-                out = new DataOutputStream(socket.getOutputStream());
             }
             catch(UnknownHostException u)
             {
@@ -424,12 +421,8 @@ public class RobotController extends Application {
                 System.out.println(i);
             }
 
-            // string to read message from input
-            String line = "photo";
-
             try
             {
-                out.writeUTF(line);
                 in = new DataInputStream(
                         new BufferedInputStream(socket.getInputStream()));
                 // read the message from the socket
@@ -468,7 +461,6 @@ public class RobotController extends Application {
             {
                 //input.close();
                 in.close();
-                out.close();
                 socket.close();
             }
             catch(IOException i)

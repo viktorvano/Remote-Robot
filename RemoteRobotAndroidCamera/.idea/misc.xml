@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Documents/GitHub/Remote-Robot/RemoteRobotAndroidCamera/Application/src/main/res/layout-land/fragment_camera2_basic.xml" value="0.13645833333333332" />
+        <entry key="..\:/Documents/GitHub/Remote-Robot/RemoteRobotAndroidCamera/Application/src/main/res/layout/activity_camera.xml" value="0.25416666666666665" />
         <entry key="..\:/Documents/GitHub/Remote-Robot/RemoteRobotAndroidCamera/Application/src/main/res/layout/fragment_camera2_basic.xml" value="0.12360688956433637" />
       </map>
     </option>

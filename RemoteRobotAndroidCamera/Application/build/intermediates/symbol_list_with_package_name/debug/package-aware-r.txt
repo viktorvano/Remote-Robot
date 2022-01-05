@@ -865,7 +865,6 @@ id collapseActionView
 id container
 id content
 id contentPanel
-id control
 id cos
 id custom
 id customPanel

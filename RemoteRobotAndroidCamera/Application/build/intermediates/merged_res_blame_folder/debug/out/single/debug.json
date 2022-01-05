@@ -4,12 +4,12 @@
         "source": "D:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\src\\main\\res\\drawable-xxhdpi\\ic_action_info.png"
     },
     {
-        "merged": "D:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_tile.9.png.flat",
-        "source": "D:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\src\\main\\res\\drawable-hdpi\\tile.9.png"
-    },
-    {
         "merged": "D:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_action_info.png.flat",
         "source": "D:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\src\\main\\res\\drawable-hdpi\\ic_action_info.png"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_tile.9.png.flat",
+        "source": "D:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\src\\main\\res\\drawable-hdpi\\tile.9.png"
     },
     {
         "merged": "D:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_action_info.png.flat",

@@ -477,7 +477,7 @@ public class Camera2BasicFragment extends Fragment
                     int height = bitmap.getWidth();
                     System.out.println("Image res: " + width + " x " + height);
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
                     byte array [] = baos.toByteArray();
                     //imageSender.sendImageToServer(array);
                     cameraServer.updateImage(array);

@@ -28,7 +28,13 @@ public class FileManager {
 
             if(data==null && filename.equals("IP_STM32.txt"))
             {
-                data="192.168.2.91";
+                data="192.168.1.3";
+                writeToFile(filename, data);
+            }
+
+            if(data==null && filename.equals("AndroidIP.txt"))
+            {
+                data="192.168.1.26";
                 writeToFile(filename, data);
             }
 

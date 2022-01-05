@@ -61,6 +61,7 @@ public class RobotController extends Application {
         final int height = 1000;
 
         stringSTM32IP = readOrCreateFile("IP_STM32.txt");
+        stringAndroidIP = readOrCreateFile("AndroidIP.txt");
 
         pane = new Pane();
 
@@ -84,9 +85,9 @@ public class RobotController extends Application {
         stage.show();
         stage.setMinWidth(stage.getWidth());
         stage.setMinHeight(stage.getHeight());
-        //stage.setMaxWidth(stage.getWidth());
-        //stage.setMaxHeight(stage.getHeight());
-        stage.setResizable(true);
+        stage.setMaxWidth(stage.getWidth());
+        stage.setMaxHeight(stage.getHeight());
+        stage.setResizable(false);
 
         imageViewCamera = new ImageView();
         imageViewCamera.setFitWidth(900);
@@ -100,7 +101,7 @@ public class RobotController extends Application {
         myAndroidCamera = new AndroidCamera(cameraPort);
         myAndroidCamera.start();
 
-        androidBatteryClient = new AndroidBatteryClient("192.168.1.26",cameraPort+1);
+        androidBatteryClient = new AndroidBatteryClient(stringAndroidIP,cameraPort+1);
         androidBatteryClient.start();
 
         try{

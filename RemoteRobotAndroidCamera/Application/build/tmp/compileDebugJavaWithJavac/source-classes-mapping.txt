@@ -8,8 +8,8 @@ com/viktor/vano/ip/camera/ImageSender.java
  com.viktor.vano.ip.camera.ImageSender
 com/viktor/vano/ip/camera/Variables.java
  com.viktor.vano.ip.camera.Variables
-com/viktor/vano/ip/camera/CameraServer.java
- com.viktor.vano.ip.camera.CameraServer
+com/viktor/vano/ip/camera/CameraActivity.java
+ com.viktor.vano.ip.camera.CameraActivity
 com/viktor/vano/ip/camera/Camera2BasicFragment.java
  com.viktor.vano.ip.camera.Camera2BasicFragment
  com.viktor.vano.ip.camera.Camera2BasicFragment$1
@@ -29,5 +29,5 @@ com/viktor/vano/ip/camera/Camera2BasicFragment.java
  com.viktor.vano.ip.camera.Camera2BasicFragment$ErrorDialog
  com.viktor.vano.ip.camera.Camera2BasicFragment$ErrorDialog$1
  com.viktor.vano.ip.camera.Camera2BasicFragment$ImageSaver
-com/viktor/vano/ip/camera/CameraActivity.java
- com.viktor.vano.ip.camera.CameraActivity
+com/viktor/vano/ip/camera/CameraServer.java
+ com.viktor.vano.ip.camera.CameraServer

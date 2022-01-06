@@ -74,22 +74,23 @@ public class CameraServer extends Thread{
                     System.out.println("Sending string to the ServerSocket");
 
                     // write the message we want to send
-                    InputStream inn = new ByteArrayInputStream(data);
-                    dataOutputStream.writeInt(data.length);
-                    int len = 0;
-                    //dataOutputStream.write(data);
-                    byte [] b = new byte [1024];
-                    while ((len = inn.read(b)) != -1)
+                    if(data != null)
                     {
-                        dataOutputStream.write(b,0,len);
+                        InputStream inn = new ByteArrayInputStream(data);
+                        dataOutputStream.writeInt(data.length);
+                        int len = 0;
+                        //dataOutputStream.write(data);
+                        byte[] b = new byte[1024];
+                        while ((len = inn.read(b)) != -1) {
+                            dataOutputStream.write(b, 0, len);
+                        }
+                        dataOutputStream.flush(); // send the message
+                        dataOutputStream.close(); // close the output stream when we're done.
                     }
-                    dataOutputStream.flush(); // send the message
-                    dataOutputStream.close(); // close the output stream when we're done.
-
                 }
-                catch(IOException i)
+                catch(Exception e)
                 {
-                    System.out.println(i);
+                    System.out.println(e);
                 }
                 System.out.println("Closing connection");
 

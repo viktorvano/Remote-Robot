@@ -29,12 +29,15 @@ class AndroidBatteryClient extends Thread{
         this.active = false;
         try
         {
-            in.close();
-            socket.close();
+            if(in != null)
+                in.close();
+
+            if(socket != null)
+                socket.close();
         }
-        catch(IOException i)
+        catch(Exception e)
         {
-            System.out.println(i);
+            System.out.println(e);
         }
     }
 

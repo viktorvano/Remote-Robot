@@ -47,12 +47,13 @@ public class RobotController extends Application {
     private Label labelSpeed;
     private Label labelDirection;
     private Label labelSTM32Status;
-    private String messageOut = "--,0\n";
+    private String messageOut = "--F0\n";
     private ClientSender stm32ClientRemoteControl;
     private ImageView imageViewCarLogo;
     private ProgressBar[] progressBarsDistance;
     private STM32Status stm32Status;
     private CheckBox checkBoxDrivingAssistance;
+    private CheckBox checkBoxLights;
     private byte [] byteArray;
 
     @Override
@@ -166,6 +167,11 @@ public class RobotController extends Application {
         checkBoxDrivingAssistance.setLayoutX(1300);
         checkBoxDrivingAssistance.setLayoutY(200);
         pane.getChildren().add(checkBoxDrivingAssistance);
+
+        checkBoxLights = new CheckBox("Lights");
+        checkBoxLights.setLayoutX(1300);
+        checkBoxLights.setLayoutY(260);
+        pane.getChildren().add(checkBoxLights);
 
         //changePaneColor("000000");
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -318,6 +324,11 @@ public class RobotController extends Application {
             else
                 messageOut += "F";
 
+            /*if(checkBoxLights.isSelected())
+                messageOut += "T";
+            else
+                messageOut += "F";*/
+
             messageOut += speed + "\n";
 
             stm32ClientRemoteControl.sendDataToServer(messageOut);
@@ -388,7 +399,7 @@ public class RobotController extends Application {
             System.out.println("ServerSocket awaiting connections...");
             while (active)
             {
-                getData("192.168.1.26", port);
+                getData(stringAndroidIP, port);
                 try
                 {
                     Thread.sleep(50);
@@ -407,10 +418,6 @@ public class RobotController extends Application {
             {
                 socket = new Socket(address, port);
                 System.out.println("Connected");
-
-                // takes input from terminal
-                //input = new DataInputStream(System.in);
-
             }
             catch(UnknownHostException u)
             {

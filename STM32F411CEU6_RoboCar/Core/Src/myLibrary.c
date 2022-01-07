@@ -361,7 +361,7 @@ void sendData()
 
 void setSpeed(int position)
 {
-	speed = atoi((char*)&buffer[position + 3]);
+	speed = atoi((char*)&buffer[position + 4]);
 	__HAL_TIM_SET_COMPARE(&htim3, Motor_PWM_Channel, speed);
 }
 

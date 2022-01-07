@@ -324,10 +324,10 @@ public class RobotController extends Application {
             else
                 messageOut += "F";
 
-            /*if(checkBoxLights.isSelected())
+            if(checkBoxLights.isSelected())
                 messageOut += "T";
             else
-                messageOut += "F";*/
+                messageOut += "F";
 
             messageOut += speed + "\n";
 

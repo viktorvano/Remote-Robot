@@ -24,6 +24,9 @@ extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim4;
 extern UART_HandleTypeDef huart1;
 
+//Change your WiFi credentials
+#define WiFi_Credentials	"AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n"
+
 #define TriggerDuration 2
 #define Steering_PWM_Channel	TIM_CHANNEL_1
 #define Motor_PWM_Channel		TIM_CHANNEL_2

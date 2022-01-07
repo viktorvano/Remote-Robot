@@ -106,8 +106,7 @@ void ESP_Server_Init()
 	HAL_Delay(2000);
 	ESP_Clear_Buffer();
 
-	//Change your WiFi SSID credentials below
-	HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n", strlen("AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n"), 100);
+	HAL_UART_Transmit(&huart1, (uint8_t*)WiFi_Credentials, strlen(WiFi_Credentials), 100);
 }
 
 void ESP_Clear_Buffer()
@@ -282,8 +281,7 @@ void messageHandler()
 			&& (string_contains((char*)buffer, "FAIL", buffer_index) != -1
 			|| string_contains((char*)buffer, "DISCONNECT", buffer_index) != -1))
 	{
-		//Change your WiFi SSID credentials below
-		HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n", strlen("AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n"), 100);
+		HAL_UART_Transmit(&huart1, (uint8_t*)WiFi_Credentials, strlen(WiFi_Credentials), 100);
 	}
 	ESP_Clear_Buffer();
 	__HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);

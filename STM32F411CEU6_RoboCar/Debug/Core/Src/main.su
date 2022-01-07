@@ -1,5 +1,5 @@
 main.c:479:13:MX_GPIO_Init	64	static
-main.c:553:6:Error_Handler	0	static,ignoring_inline_asm
+main.c:560:6:Error_Handler	0	static,ignoring_inline_asm
 main.c:205:13:MX_ADC1_Init	24	static
 main.c:293:13:MX_TIM2_Init	32	static
 main.c:338:13:MX_TIM3_Init	64	static

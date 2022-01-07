@@ -64,6 +64,7 @@ void setSpeed(int position);
 void halt();
 void stopMotors();
 void drivingAssistance();
+void lights(GPIO_PinState status);
 uint32_t HAL_GetTick(void);
 
 #endif /* INC_MYLIBRARY_H_ */

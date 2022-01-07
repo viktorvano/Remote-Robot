@@ -203,8 +203,14 @@ void messageHandler()
 		HAL_GPIO_WritePin(Motor_B_GPIO_Port, Motor_B_Pin, 0);
 		HAL_GPIO_WritePin(Steering_A_GPIO_Port, Steering_A_Pin, 0);
 		HAL_GPIO_WritePin(Steering_B_GPIO_Port, Steering_B_Pin, 0);
+
 		if(buffer[position+2] == 'T')
 			drivingAssistance();
+
+		if(buffer[position+3] == 'T')
+			lights(GPIO_PIN_SET);
+		else
+			lights(GPIO_PIN_RESET);
 	}else if((position = string_contains((char*)buffer, "B-", buffer_index)) != -1)
 	{
 		setSpeed(position);
@@ -212,8 +218,14 @@ void messageHandler()
 		HAL_GPIO_WritePin(Motor_B_GPIO_Port, Motor_B_Pin, 1);
 		HAL_GPIO_WritePin(Steering_A_GPIO_Port, Steering_A_Pin, 0);
 		HAL_GPIO_WritePin(Steering_B_GPIO_Port, Steering_B_Pin, 0);
+
 		if(buffer[position+2] == 'T')
 			drivingAssistance();
+
+		if(buffer[position+3] == 'T')
+			lights(GPIO_PIN_SET);
+		else
+			lights(GPIO_PIN_RESET);
 	}else if((position = string_contains((char*)buffer, "-R", buffer_index)) != -1)
 	{
 		setSpeed(position);
@@ -221,8 +233,14 @@ void messageHandler()
 		HAL_GPIO_WritePin(Motor_B_GPIO_Port, Motor_B_Pin, 0);
 		HAL_GPIO_WritePin(Steering_A_GPIO_Port, Steering_A_Pin, 1);
 		HAL_GPIO_WritePin(Steering_B_GPIO_Port, Steering_B_Pin, 0);
+
 		if(buffer[position+2] == 'T')
 			drivingAssistance();
+
+		if(buffer[position+3] == 'T')
+			lights(GPIO_PIN_SET);
+		else
+			lights(GPIO_PIN_RESET);
 	}else if((position = string_contains((char*)buffer, "-L", buffer_index)) != -1)
 	{
 		setSpeed(position);
@@ -230,8 +248,14 @@ void messageHandler()
 		HAL_GPIO_WritePin(Motor_B_GPIO_Port, Motor_B_Pin, 0);
 		HAL_GPIO_WritePin(Steering_A_GPIO_Port, Steering_A_Pin, 0);
 		HAL_GPIO_WritePin(Steering_B_GPIO_Port, Steering_B_Pin, 1);
+
 		if(buffer[position+2] == 'T')
 			drivingAssistance();
+
+		if(buffer[position+3] == 'T')
+			lights(GPIO_PIN_SET);
+		else
+			lights(GPIO_PIN_RESET);
 	}else if((position = string_contains((char*)buffer, "FR", buffer_index)) != -1)
 	{
 		setSpeed(position);
@@ -239,8 +263,14 @@ void messageHandler()
 		HAL_GPIO_WritePin(Motor_B_GPIO_Port, Motor_B_Pin, 0);
 		HAL_GPIO_WritePin(Steering_A_GPIO_Port, Steering_A_Pin, 1);
 		HAL_GPIO_WritePin(Steering_B_GPIO_Port, Steering_B_Pin, 0);
+
 		if(buffer[position+2] == 'T')
 			drivingAssistance();
+
+		if(buffer[position+3] == 'T')
+			lights(GPIO_PIN_SET);
+		else
+			lights(GPIO_PIN_RESET);
 	}else if((position = string_contains((char*)buffer, "FL", buffer_index)) != -1)
 	{
 		setSpeed(position);
@@ -248,8 +278,14 @@ void messageHandler()
 		HAL_GPIO_WritePin(Motor_B_GPIO_Port, Motor_B_Pin, 0);
 		HAL_GPIO_WritePin(Steering_A_GPIO_Port, Steering_A_Pin, 0);
 		HAL_GPIO_WritePin(Steering_B_GPIO_Port, Steering_B_Pin, 1);
+
 		if(buffer[position+2] == 'T')
 			drivingAssistance();
+
+		if(buffer[position+3] == 'T')
+			lights(GPIO_PIN_SET);
+		else
+			lights(GPIO_PIN_RESET);
 	}else if((position = string_contains((char*)buffer, "BR", buffer_index)) != -1)
 	{
 		setSpeed(position);
@@ -257,8 +293,14 @@ void messageHandler()
 		HAL_GPIO_WritePin(Motor_B_GPIO_Port, Motor_B_Pin, 1);
 		HAL_GPIO_WritePin(Steering_A_GPIO_Port, Steering_A_Pin, 1);
 		HAL_GPIO_WritePin(Steering_B_GPIO_Port, Steering_B_Pin, 0);
+
 		if(buffer[position+2] == 'T')
 			drivingAssistance();
+
+		if(buffer[position+3] == 'T')
+			lights(GPIO_PIN_SET);
+		else
+			lights(GPIO_PIN_RESET);
 	}else if((position = string_contains((char*)buffer, "BL", buffer_index)) != -1)
 	{
 		setSpeed(position);
@@ -266,8 +308,14 @@ void messageHandler()
 		HAL_GPIO_WritePin(Motor_B_GPIO_Port, Motor_B_Pin, 1);
 		HAL_GPIO_WritePin(Steering_A_GPIO_Port, Steering_A_Pin, 0);
 		HAL_GPIO_WritePin(Steering_B_GPIO_Port, Steering_B_Pin, 1);
+
 		if(buffer[position+2] == 'T')
 			drivingAssistance();
+
+		if(buffer[position+3] == 'T')
+			lights(GPIO_PIN_SET);
+		else
+			lights(GPIO_PIN_RESET);
 	}else if((position = string_contains((char*)buffer, "--", buffer_index)) != -1)
 	{
 		setSpeed(position);
@@ -275,8 +323,14 @@ void messageHandler()
 		HAL_GPIO_WritePin(Motor_B_GPIO_Port, Motor_B_Pin, 0);
 		HAL_GPIO_WritePin(Steering_A_GPIO_Port, Steering_A_Pin, 0);
 		HAL_GPIO_WritePin(Steering_B_GPIO_Port, Steering_B_Pin, 0);
+
 		if(buffer[position+2] == 'T')
 			drivingAssistance();
+
+		if(buffer[position+3] == 'T')
+			lights(GPIO_PIN_SET);
+		else
+			lights(GPIO_PIN_RESET);
 	}else if(string_contains((char*)buffer, "+CWJAP:", buffer_index) != -1
 			&& (string_contains((char*)buffer, "FAIL", buffer_index) != -1
 			|| string_contains((char*)buffer, "DISCONNECT", buffer_index) != -1))
@@ -341,6 +395,11 @@ void drivingAssistance()
 		HAL_GPIO_WritePin(Motor_A_GPIO_Port, Motor_A_Pin, 0);
 		HAL_GPIO_WritePin(Motor_B_GPIO_Port, Motor_B_Pin, 1);
 	}
+}
+
+void lights(GPIO_PinState status)
+{
+	HAL_GPIO_WritePin(LIGHTS_GPIO_Port, LIGHTS_Pin, status);
 }
 
 uint32_t HAL_GetTick(void)

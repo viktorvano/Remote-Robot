@@ -28,6 +28,7 @@ import static com.viktor.vano.robot.controller.FileManager.readOrCreateFile;
 import static com.viktor.vano.robot.controller.Variables.*;
 
 public class RobotController extends Application {
+    private static final String version = "20220204";
     private Pane pane;
     private int length = 0;
     private Label androidLabel;
@@ -81,7 +82,7 @@ public class RobotController extends Application {
 
         Scene scene = new Scene(pane, width, height);
 
-        stage.setTitle("Robot Controller");
+        stage.setTitle("Robot Controller " + version);
         stage.setScene(scene);
         stage.show();
         stage.setMinWidth(stage.getWidth());
@@ -205,6 +206,11 @@ public class RobotController extends Application {
                 if(keyCode == KeyCode.R)
                 {
                     checkBoxDrivingAssistance.setSelected(!checkBoxDrivingAssistance.isSelected());
+                }
+
+                if(keyCode == KeyCode.L)
+                {
+                    checkBoxLights.setSelected(!checkBoxLights.isSelected());
                 }
 
                 if(keyCode == KeyCode.DIGIT1)

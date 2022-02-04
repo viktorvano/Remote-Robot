@@ -46,5 +46,21 @@ void calculateBattery()
 [Java Desktop App] Also you have to change the IP addresses in "IP_STM32.txt" and "AndroidIP.txt" files,   
 which is automatically generated if does not exist and the JAR app is launched.
   
+## DDNS  
+  
+Use a DDNS service such as No-IP to create a hostname
+![alt text](https://github.com/viktorvano/STM32-IoT-Humdity-Sensor/blob/main/documents/noip.png?raw=true)   
+  
+Add DDNS credentials to your router  
+![alt text](https://github.com/viktorvano/STM32-IoT-Humdity-Sensor/blob/main/documents/DDNS.png?raw=true)   
+  
+Reserve IP address of your IoT device (make it static, so it won't change over time)  
+![alt text](https://github.com/viktorvano/STM32-IoT-Humdity-Sensor/blob/main/documents/static-device-IP.png?raw=true)   
+  
+Setup a port forwarding rules for STM32 (ESP8266) and Android too.  
+![alt text](https://github.com/viktorvano/STM32-IoT-Humdity-Sensor/blob/main/documents/port-forwarding.png?raw=true)   
+  
+Now you can access the robot from anywhere.  
+  
 ##### Ultrasonic Sensors repository
 https://github.com/viktorvano/STM32F103C8T6_HC-SR04

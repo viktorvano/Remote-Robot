@@ -4,7 +4,7 @@
    
 ## Photos
 
-![alt text](https://github.com/viktorvano/Remote-Robot/blob/main/Documents/IMG_20210620_173554_845.jpg?raw=true)  
+![alt text](https://github.com/viktorvano/Remote-Robot/blob/main/Documents/car.jpg?raw=true)  
   
 ## Java Desktop App  
 - Use WASD to move around  

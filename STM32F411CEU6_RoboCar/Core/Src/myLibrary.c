@@ -83,27 +83,27 @@ void ESP_RESET()
 void ESP_Server_Init()
 {
 	ESP_RESET();
-	HAL_Delay(2000);
+	HAL_Delay(200);
 	ESP_Clear_Buffer();
 
 	HAL_UART_Transmit(&huart1, (uint8_t*)"AT+RST\r\n", strlen("AT+RST\r\n"), 100);
-	HAL_Delay(1500);
+	HAL_Delay(200);
 	ESP_Clear_Buffer();
 
 	HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CWMODE=1\r\n", strlen("AT+CWMODE=1\r\n"), 100);
-	HAL_Delay(2000);
+	HAL_Delay(200);
 	ESP_Clear_Buffer();
 
 	HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CWDHCP=1,1\r\n", strlen("AT+CWDHCP=1,1\r\n"), 100);
-	HAL_Delay(2000);
+	HAL_Delay(200);
 	ESP_Clear_Buffer();
 
 	HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CIPMUX=1\r\n", strlen("AT+CIPMUX=1\r\n"), 100);
-	HAL_Delay(2000);
+	HAL_Delay(200);
 	ESP_Clear_Buffer();
 
 	HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CIPSERVER=1,80\r\n", strlen("AT+CIPSERVER=1,80\r\n"), 100);
-	HAL_Delay(2000);
+	HAL_Delay(200);
 	ESP_Clear_Buffer();
 
 	HAL_UART_Transmit(&huart1, (uint8_t*)WiFi_Credentials, strlen(WiFi_Credentials), 100);

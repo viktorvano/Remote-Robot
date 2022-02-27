@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private int length = 0;
     private boolean updateImage = false;
     private byte [] byteArray;
-    private TextView textViewVersion;
+    private TextView textViewVersion, textViewAndroidBattery;
     private ImageView imageViewCamera;
 
     @Override
@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         textViewVersion = findViewById(R.id.textViewVersion);
         textViewVersion.setText(version);
 
+        textViewAndroidBattery = findViewById(R.id.textViewAndroidBattery);
+
         //stm32ClientRemoteControl = new ClientSender(stringSTM32IP, 80, 1800);
         //stm32ClientRemoteControl.start();
 
@@ -62,22 +64,34 @@ public class MainActivity extends AppCompatActivity {
         myAndroidCamera = new AndroidCamera(cameraPort);
         myAndroidCamera.start();
 
-        //androidBatteryClient = new AndroidBatteryClient(stringAndroidIP,cameraPort+1);
-        //androidBatteryClient.start();
+        androidBatteryClient = new AndroidBatteryClient(stringAndroidIP,cameraPort+1);
+        androidBatteryClient.start();
 
         Handler handler = new Handler();
 
         final Runnable r = new Runnable() {
             public void run() {
                 updateImage();
-                //if(androidBatteryClient.isMessageReceived())
-                //{
-                    //androidLabel.setText(androidBatteryClient.getMessage());
-                //}
-                handler.postDelayed(this, 1000);
+                if(androidBatteryClient.isMessageReceived())
+                {
+                    textViewAndroidBattery.setText(androidBatteryClient.getMessage());
+                }
+
+                handler.postDelayed(this, 10);
             }
         };
-        handler.postDelayed(r, 1000);
+        handler.postDelayed(r, 10);
+
+        Handler handler2 = new Handler();
+
+        final Runnable r2 = new Runnable() {
+            public void run() {
+
+
+                handler2.postDelayed(this, 200);
+            }
+        };
+        handler2.postDelayed(r2, 200);
     }
 
     @Override

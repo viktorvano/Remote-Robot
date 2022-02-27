@@ -10,8 +10,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.SeekBar;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.io.BufferedInputStream;
@@ -22,11 +25,7 @@ import java.net.Socket;
 
 public class MainActivity extends AppCompatActivity {
     private Button buttonForward, buttonBackward, buttonRight, buttonLeft;
-    private boolean forward = false;
-    private boolean backward = false;
-    private boolean right = false;
-    private boolean left = false;
-    private String messageOut = "--F0\n";
+    private String messageOut = "--FF0\n";
     private STM32Status stm32Status;
     private ClientSender stm32ClientRemoteControl;
     private AndroidCamera myAndroidCamera;
@@ -34,8 +33,12 @@ public class MainActivity extends AppCompatActivity {
     private int length = 0;
     private boolean updateImage = false;
     private byte [] byteArray;
-    private TextView textViewVersion, textViewAndroidBattery;
+    private TextView textViewVersion, textViewAndroidBattery, textViewSTM32Status;
     private ImageView imageViewCamera;
+    private Switch switchLights, switchDrivingAssistance;
+    private SeekBar seekBarSpeed;
+    private int speed = 51;
+    private Button buttonSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +57,40 @@ public class MainActivity extends AppCompatActivity {
         textViewVersion.setText(version);
 
         textViewAndroidBattery = findViewById(R.id.textViewAndroidBattery);
+        textViewSTM32Status = findViewById(R.id.textViewSTM32Status);
+        switchLights = findViewById(R.id.switchLights);
+        switchDrivingAssistance = findViewById(R.id.switchDrivingAssistance);
+        seekBarSpeed = findViewById(R.id.seekBarSpeed);
+        seekBarSpeed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                speed = i;
+            }
 
-        //stm32ClientRemoteControl = new ClientSender(stringSTM32IP, 80, 1800);
-        //stm32ClientRemoteControl.start();
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
 
-        //stm32Status = new STM32Status(stm32StatusUpdatePeriod, stringSTM32IP);
-        //stm32Status.start();
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        buttonSettings = findViewById(R.id.buttonSettings);
+        buttonSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+            }
+        });
+
+        stm32ClientRemoteControl = new ClientSender(stringSTM32IP, 80, 1800);
+        stm32ClientRemoteControl.start();
+
+        stm32Status = new STM32Status(stm32StatusUpdatePeriod, stringSTM32IP);
+        stm32Status.start();
 
         myAndroidCamera = new AndroidCamera(cameraPort);
         myAndroidCamera.start();
@@ -68,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
         androidBatteryClient.start();
 
         Handler handler = new Handler();
-
         final Runnable r = new Runnable() {
             public void run() {
                 updateImage();
@@ -76,18 +106,20 @@ public class MainActivity extends AppCompatActivity {
                 {
                     textViewAndroidBattery.setText(androidBatteryClient.getMessage());
                 }
-
                 handler.postDelayed(this, 10);
             }
         };
         handler.postDelayed(r, 10);
 
         Handler handler2 = new Handler();
-
         final Runnable r2 = new Runnable() {
             public void run() {
-
-
+                if(stm32Status.isMessageAvailable())
+                {
+                    String message = stm32Status.getStm32Message();
+                    textViewSTM32Status.setText(message);
+                }
+                sendRemoteCommand();
                 handler2.postDelayed(this, 200);
             }
         };
@@ -98,10 +130,43 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         myAndroidCamera.stopServer();
-        //androidBatteryClient.stopServer();
-        //stm32ClientRemoteControl.stopClient();
-        //stm32Status.stopSTM32Status();
+        androidBatteryClient.stopServer();
+        stm32ClientRemoteControl.stopClient();
+        stm32Status.stopSTM32Status();
         System.out.println("Closing the application.");
+    }
+
+    private void sendRemoteCommand()
+    {
+        messageOut = "";
+
+        if(buttonForward.isPressed())
+            messageOut += "F";
+        else if(buttonBackward.isPressed())
+            messageOut += "B";
+        else
+            messageOut += "-";
+
+        if(buttonRight.isPressed())
+            messageOut += "R";
+        else if(buttonLeft.isPressed())
+            messageOut += "L";
+        else
+            messageOut += "-";
+
+        if(switchDrivingAssistance.isChecked())
+            messageOut += "T";
+        else
+            messageOut += "F";
+
+        if(switchLights.isChecked())
+            messageOut += "T";
+        else
+            messageOut += "F";
+
+        messageOut += speed + "\n";
+
+        stm32ClientRemoteControl.sendDataToServer(messageOut);
     }
 
     private void updateImage()

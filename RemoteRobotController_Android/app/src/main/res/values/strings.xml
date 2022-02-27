@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">RemoteRobotController</string>
+    <string name="config_button">Configuration</string>
+    <string name="config_server_ip">STM32 Address</string>
+    <string name="config_server_port">Android Camera Address</string>
+    <string name="config_server_ip_hint">Enter URL or Server IP</string>
+    <string name="config_server_port_hint">Enter URL or Server IP</string>
+    <string name="config_save">SAVE</string>
+    <string name="mic">Mic</string>
 </resources>

@@ -11,17 +11,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RemoteRobotController"
-        android:screenOrientation="landscape">
+        android:theme="@style/Theme.RemoteRobotController">
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name="eu.cyberpunktech.remoterobotcontroller.ConfigurationActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

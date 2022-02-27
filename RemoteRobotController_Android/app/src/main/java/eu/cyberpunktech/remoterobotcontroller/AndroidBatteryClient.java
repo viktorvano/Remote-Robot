@@ -76,7 +76,7 @@ class AndroidBatteryClient extends Thread{
                         new BufferedInputStream(socket.getInputStream()));
                 this.message = in.readUTF();
             }
-            catch(IOException i)
+            catch(Exception i)
             {
                 System.out.println(i);
             }
@@ -84,12 +84,14 @@ class AndroidBatteryClient extends Thread{
             // close the connection
             try
             {
-                in.close();
-                socket.close();
+                if(in != null)
+                    in.close();
+                if(socket != null)
+                    socket.close();
             }
-            catch(IOException i)
+            catch(Exception i)
             {
-                System.out.println(i);
+                i.printStackTrace();
             }
 
             if(this.message != null && !this.message.equals(""))

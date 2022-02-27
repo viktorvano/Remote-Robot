@@ -5,6 +5,8 @@ import static eu.cyberpunktech.remoterobotcontroller.Variables.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
@@ -46,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        loadData();
 
         buttonForward = findViewById(R.id.buttonForward);
         buttonBackward = findViewById(R.id.buttonBackward);
@@ -82,7 +87,9 @@ public class MainActivity extends AppCompatActivity {
         buttonSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                final Intent intent = new Intent(getApplicationContext(), ConfigurationActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -134,6 +141,13 @@ public class MainActivity extends AppCompatActivity {
         stm32ClientRemoteControl.stopClient();
         stm32Status.stopSTM32Status();
         System.out.println("Closing the application.");
+    }
+
+    public void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(Variables.CONFIGURATION, MODE_PRIVATE);
+        stringSTM32IP = sharedPreferences.getString(STM32_ADDRESS, "example1.ddns.net");
+        stringAndroidIP = sharedPreferences.getString(ANDROID_CAMERA_ADDRESS, "example2.ddns.net");
+        Toast.makeText(this, "Data loaded", Toast.LENGTH_SHORT).show();
     }
 
     private void sendRemoteCommand()
@@ -195,7 +209,8 @@ public class MainActivity extends AppCompatActivity {
         public void stopServer(){
             this.active = false;
             try {
-                socket.close();
+                if(socket != null)
+                    socket.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }

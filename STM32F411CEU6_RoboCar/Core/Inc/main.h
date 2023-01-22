@@ -106,6 +106,7 @@ void Error_Handler(void);
 #define Motor_A_GPIO_Port GPIOB
 #define LIGHTS_Pin GPIO_PIN_9
 #define LIGHTS_GPIO_Port GPIOB
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

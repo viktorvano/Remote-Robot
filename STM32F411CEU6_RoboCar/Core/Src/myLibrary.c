@@ -49,7 +49,7 @@ void SysTickDisable()
 
 uint16_t measureDistance(GPIO_TypeDef *triggerPort, uint16_t triggerPin, GPIO_TypeDef *echoPort, uint16_t echoPin)
 {
-	if(HAL_GPIO_ReadPin(echoPort, echoPin))//skip sensor if ECHO pin is still busy
+	if(!HAL_GPIO_ReadPin(echoPort, echoPin))//skip sensor if ECHO pin is still busy
 	{
 		__HAL_UART_DISABLE_IT(&huart1, UART_IT_RXNE);
 		SysTickDisable();

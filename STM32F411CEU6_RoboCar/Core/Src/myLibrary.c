@@ -49,25 +49,31 @@ void SysTickDisable()
 
 uint16_t measureDistance(GPIO_TypeDef *triggerPort, uint16_t triggerPin, GPIO_TypeDef *echoPort, uint16_t echoPin)
 {
+	if(HAL_GPIO_ReadPin(echoPort, echoPin))//skip sensor if ECHO pin is still busy
+	{
+		__HAL_UART_DISABLE_IT(&huart1, UART_IT_RXNE);
+		SysTickDisable();
+		//HAL_TIM_Base_Stop_IT(&htim2);//1s
+		HAL_TIM_Base_Stop_IT(&htim3);//20ms
+		HAL_TIM_Base_Start_IT(&htim4);//58us
+		HAL_GPIO_WritePin(triggerPort, triggerPin, GPIO_PIN_SET);
+		triggerTime = 0;//reset the variable
+		asm ("nop");//to avoid program freezing
+		while(triggerTime < TriggerDuration);
+		HAL_GPIO_WritePin(triggerPort, triggerPin, GPIO_PIN_RESET);
+		while(!HAL_GPIO_ReadPin(echoPort, echoPin) && oneSecondFlag == 0);//oneSecondFlag to avoid program freezing
+		distance = 0;//reset the variable
+		while(HAL_GPIO_ReadPin(echoPort, echoPin) && oneSecondFlag == 0);
+		HAL_TIM_Base_Stop_IT(&htim4);//58us
+		HAL_TIM_Base_Start_IT(&htim3);//20ms
+		//HAL_TIM_Base_Start_IT(&htim2);//1s
+		SysTickEnable();
+		__HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);
+	}else//give max distance if ECHO pin is still busy
+	{
+		distance = 500;
+	}
 
-	__HAL_UART_DISABLE_IT(&huart1, UART_IT_RXNE);
-	SysTickDisable();
-	//HAL_TIM_Base_Stop_IT(&htim2);//1s
-	HAL_TIM_Base_Stop_IT(&htim3);//20ms
-	HAL_TIM_Base_Start_IT(&htim4);//58us
-	HAL_GPIO_WritePin(triggerPort, triggerPin, GPIO_PIN_SET);
-	triggerTime = 0;//reset the variable
-	asm ("nop");//to avoid program freezing
-	while(triggerTime < TriggerDuration);
-	HAL_GPIO_WritePin(triggerPort, triggerPin, GPIO_PIN_RESET);
-	while(!HAL_GPIO_ReadPin(echoPort, echoPin) && oneSecondFlag == 0);//oneSecondFlag to avoid program freezing
-	distance = 0;//reset the variable
-	while(HAL_GPIO_ReadPin(echoPort, echoPin) && oneSecondFlag == 0);
-	HAL_TIM_Base_Stop_IT(&htim4);//58us
-	HAL_TIM_Base_Start_IT(&htim3);//20ms
-	//HAL_TIM_Base_Start_IT(&htim2);//1s
-	SysTickEnable();
-	__HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);
 	return distance;
 }
 
@@ -367,6 +373,7 @@ void setSpeed(int position)
 
 void halt()
 {
+	lights(GPIO_PIN_RESET);
 	HAL_ADC_Stop_IT(&hadc1);
 	HAL_TIM_Base_Stop_IT(&htim3);//20ms
 	HAL_TIM_Base_Stop_IT(&htim4);//58us

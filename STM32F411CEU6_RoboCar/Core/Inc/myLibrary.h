@@ -31,19 +31,19 @@ extern UART_HandleTypeDef huart1;
 #define Steering_PWM_Channel	TIM_CHANNEL_1
 #define Motor_PWM_Channel		TIM_CHANNEL_2
 
-uint16_t distance, triggerTime, sensor, d[5];
-GPIO_TypeDef *triggerPorts[5];
-uint16_t triggerPins[5];
-GPIO_TypeDef *echoPorts[5];
-uint16_t echoPins[5];
-float batteryVoltage;
-uint32_t ADC_Value;
-uint8_t buffer[2000];
-uint16_t buffer_index, timeout, messageHandlerFlag, netTimeout;
-uint8_t oneSecondFlag;
-float percent;
-uint8_t speed;
-uint32_t safeCounter;
+extern uint16_t distance, triggerTime, sensor, d[5];
+extern GPIO_TypeDef *triggerPorts[5];
+extern uint16_t triggerPins[5];
+extern GPIO_TypeDef *echoPorts[5];
+extern uint16_t echoPins[5];
+extern float batteryVoltage;
+extern uint32_t ADC_Value;
+extern uint8_t buffer[2000];
+extern uint16_t buffer_index, timeout, messageHandlerFlag, netTimeout;
+extern uint8_t oneSecondFlag;
+extern float percent;
+extern uint8_t speed;
+extern uint32_t safeCounter;
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc);
 void SysTickEnable();

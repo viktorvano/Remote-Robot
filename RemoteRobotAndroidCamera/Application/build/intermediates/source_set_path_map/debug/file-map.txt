@@ -1,0 +1,16 @@
+com.viktor.vano.ip.camera.Application-appcompat-v7-28.0.0-0 C:\Users\vikto\.gradle\caches\transforms-3\6b4a2e82381d94828436df45404462f6\transformed\appcompat-v7-28.0.0\res
+com.viktor.vano.ip.camera.Application-constraint-layout-2.0.4-1 C:\Users\vikto\.gradle\caches\transforms-3\a0ff3340122196c62dc7f7e74a22f7c5\transformed\constraint-layout-2.0.4\res
+com.viktor.vano.ip.camera.Application-coordinatorlayout-28.0.0-2 C:\Users\vikto\.gradle\caches\transforms-3\b1633334360715cfe3a6f8adb06e849c\transformed\coordinatorlayout-28.0.0\res
+com.viktor.vano.ip.camera.Application-support-media-compat-28.0.0-3 C:\Users\vikto\.gradle\caches\transforms-3\beefc6dd22786a99c1f22430ffeb8baa\transformed\support-media-compat-28.0.0\res
+com.viktor.vano.ip.camera.Application-cardview-v7-28.0.0-4 C:\Users\vikto\.gradle\caches\transforms-3\c5a640de62758ff04f20d41ef3deebfa\transformed\cardview-v7-28.0.0\res
+com.viktor.vano.ip.camera.Application-support-compat-28.0.0-5 C:\Users\vikto\.gradle\caches\transforms-3\ecbd23666767c8ec76a81939f74c71e4\transformed\support-compat-28.0.0\res
+com.viktor.vano.ip.camera.Application-pngs-6 D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\build\generated\res\pngs\debug
+com.viktor.vano.ip.camera.Application-resValues-7 D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\build\generated\res\resValues\debug
+com.viktor.vano.ip.camera.Application-rs-8 D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\build\generated\res\rs\debug
+com.viktor.vano.ip.camera.Application-mergeDebugResources-9 D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.viktor.vano.ip.camera.Application-mergeDebugResources-10 D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.viktor.vano.ip.camera.Application-merged_res-11 D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\build\intermediates\merged_res\debug
+com.viktor.vano.ip.camera.Application-common-12 D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\common\res
+com.viktor.vano.ip.camera.Application-debug-13 D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\debug\res
+com.viktor.vano.ip.camera.Application-main-14 D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\main\res
+com.viktor.vano.ip.camera.Application-template-15 D:\Documents\GitHub\Remote-Robot\RemoteRobotAndroidCamera\Application\src\template\res

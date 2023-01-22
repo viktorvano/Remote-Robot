@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "com.viktor.vano.ip.camera.Application-mergeDebugResources-9:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\vikto\\.gradle\\caches\\transforms-3\\87e68378c3ec59d20a327f2af34483c1\\transformed\\support-media-compat-27.1.1\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\vikto\\.gradle\\caches\\transforms-3\\6b4a2e82381d94828436df45404462f6\\transformed\\appcompat-v7-28.0.0\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vikto\\.gradle\\caches\\transforms-3\\beefc6dd22786a99c1f22430ffeb8baa\\transformed\\support-media-compat-28.0.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -18,16 +28,6 @@
                         "startOffsets": "347,413,474,540",
                         "endColumns": "65,60,65,66",
                         "endOffsets": "408,469,535,602"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vikto\\.gradle\\caches\\transforms-3\\1a3b0a41101286a4e4403084b915f3d4\\transformed\\appcompat-v7-28.0.0\\res\\values-v24\\values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
                     }
                 }
             ]

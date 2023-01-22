@@ -19,6 +19,34 @@ public class StringSenderServer extends Thread{
         message = "";
     }
 
+    public void stopServer(){
+        this.run = false;
+        // close connection
+        try{
+            if(socket!=null)
+                socket.close();
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        }
+
+        try{
+            if(server!=null)
+                server.close();
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        }
+
+        try{
+            if(out!=null)
+                out.close();
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        }
+    }
+
     @Override
     public void run() {
         super.run();
@@ -56,14 +84,29 @@ public class StringSenderServer extends Thread{
                 System.out.println("Closing connection");
 
                 // close connection
-                if(socket!=null)
-                    socket.close();
+                try{
+                    if(socket!=null)
+                        socket.close();
+                }catch (Exception e)
+                {
+                    System.out.println(e);
+                }
 
-                if(server!=null)
-                    server.close();
+                try{
+                    if(server!=null)
+                        server.close();
+                }catch (Exception e)
+                {
+                    System.out.println(e);
+                }
 
-                if(out!=null)
-                    out.close();
+                try{
+                    if(out!=null)
+                        out.close();
+                }catch (Exception e)
+                {
+                    System.out.println(e);
+                }
             }
             catch(IOException i)
             {

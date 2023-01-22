@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "com.viktor.vano.ip.camera.Application-mergeDebugResources-9:/values-v11/values-v11.xml",
             "map": [
                 {
                     "source": "D:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\src\\main\\res\\values-v11\\template-styles.xml",

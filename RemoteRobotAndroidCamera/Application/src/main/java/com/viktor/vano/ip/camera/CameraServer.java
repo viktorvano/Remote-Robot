@@ -1,6 +1,5 @@
 package com.viktor.vano.ip.camera;
 
-import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -23,21 +22,37 @@ public class CameraServer extends Thread{
 
     public void stopServer(){
         this.active = false;
-        try {
-            // close connection
+        // close connection
+        try{
             if(socket!=null)
                 socket.close();
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        }
 
+        try{
             if(server!=null)
                 server.close();
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        }
 
+        try{
             if(in!=null)
                 in.close();
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        }
 
+        try{
             if(out!=null)
                 out.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        }catch (Exception e)
+        {
+            System.out.println(e);
         }
     }
 
@@ -95,17 +110,37 @@ public class CameraServer extends Thread{
                 System.out.println("Closing connection");
 
                 // close connection
-                if(socket!=null)
-                    socket.close();
+                try{
+                    if(socket!=null)
+                        socket.close();
+                }catch (Exception e)
+                {
+                    System.out.println(e);
+                }
 
-                if(server!=null)
-                    server.close();
+                try{
+                    if(server!=null)
+                        server.close();
+                }catch (Exception e)
+                {
+                    System.out.println(e);
+                }
 
-                if(in!=null)
-                    in.close();
+                try{
+                    if(in!=null)
+                        in.close();
+                }catch (Exception e)
+                {
+                    System.out.println(e);
+                }
 
-                if(out!=null)
-                    out.close();
+                try{
+                    if(out!=null)
+                        out.close();
+                }catch (Exception e)
+                {
+                    System.out.println(e);
+                }
             }
             catch(IOException i)
             {

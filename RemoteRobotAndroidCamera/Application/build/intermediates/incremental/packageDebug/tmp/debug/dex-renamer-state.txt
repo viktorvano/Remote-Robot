@@ -1,4 +1,4 @@
-#Fri Feb 04 17:12:59 CET 2022
+#Sun Jan 22 14:20:49 CET 2023
 base.2=D\:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
 path.2=13/classes.dex
 base.1=D\:\\Documents\\GitHub\\Remote-Robot\\RemoteRobotAndroidCamera\\Application\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

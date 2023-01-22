@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/Remote-Robot.RemoteRobotAndroidCamera.Application.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/Remote-Robot.RemoteRobotAndroidCamera.Application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/Remote-Robot.RemoteRobotAndroidCamera.Application.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/Remote-Robot.RemoteRobotAndroidCamera.Application.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/Remote-Robot.RemoteRobotAndroidCamera.Application.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/Remote-Robot.RemoteRobotAndroidCamera.Application.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/Remote-Robot.RemoteRobotAndroidCamera.Application.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/Remote-Robot.RemoteRobotAndroidCamera.Application.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RemoteRobotAndroidCamera.iml" filepath="$PROJECT_DIR$/.idea/modules/RemoteRobotAndroidCamera.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/RemoteRobotAndroidCamera.Application.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/RemoteRobotAndroidCamera.Application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/RemoteRobotAndroidCamera.Application.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/RemoteRobotAndroidCamera.Application.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/RemoteRobotAndroidCamera.Application.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/RemoteRobotAndroidCamera.Application.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/RemoteRobotAndroidCamera.Application.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/RemoteRobotAndroidCamera.Application.unitTest.iml" />
     </modules>
   </component>
 </project>

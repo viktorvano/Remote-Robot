@@ -468,6 +468,7 @@ public class Camera2BasicFragment extends Fragment
         //final ImageSender imageSender = new ImageSender(7770, updatePeriod-8);
         //imageSender.start();
         imageHandler.postDelayed(new Runnable() {
+            @SuppressLint("SuspiciousIndentation")
             @Override
             public void run()
             {

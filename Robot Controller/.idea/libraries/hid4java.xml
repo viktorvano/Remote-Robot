@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="hid4java" type="repository">
+    <properties maven-id="org.hid4java:hid4java:0.8.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/hid4java/hid4java/0.8.0/hid4java-0.8.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/jna/jna/5.17.0/jna-5.17.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

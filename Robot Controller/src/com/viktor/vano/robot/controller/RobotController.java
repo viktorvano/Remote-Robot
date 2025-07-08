@@ -37,7 +37,7 @@ public class RobotController extends Application implements HidServicesListener{
     private Pane pane;
     private int length = 0;
     private Label androidLabel;
-    private Timeline timeline, timelineSend;
+    private Timeline timeline, timelineSend, timelineFanatec;
     private AndroidCamera myAndroidCamera;
     private AndroidBatteryClient androidBatteryClient;
     private ImageView imageViewCamera;
@@ -74,6 +74,8 @@ public class RobotController extends Application implements HidServicesListener{
 
     int[] fanatecPids = {0xABC1, 0xABC2, 0xDEF3};  // List of Fanatec Product IDs you want
     int fanatecVid = 0x1430;   // Example Fanatec VID (replace with yours)
+
+    private HidDevice deviceFanatec;
 
     @Override
     public void start(Stage stage){
@@ -318,6 +320,10 @@ public class RobotController extends Application implements HidServicesListener{
                 for (int pid : fanatecPids) {
                     if (device.getProductId() == pid) {
                         System.out.println("✅ Found Fanatec Device: " + device);
+                        if(deviceFanatec == null)
+                        {
+                            deviceFanatec = device;
+                        }
                     }
                 }
             }
@@ -389,6 +395,31 @@ public class RobotController extends Application implements HidServicesListener{
         }));
         timelineSend.setCycleCount(Timeline.INDEFINITE);
         //timelineSend.play();
+
+        if (deviceFanatec != null && !deviceFanatec.isOpen())
+        {
+            deviceFanatec.open();
+        }
+        byte[] buffer = new byte[64];  // Size depends on device report size
+        timelineFanatec = new Timeline(new KeyFrame(Duration.millis(10), event ->{
+            if(deviceFanatec != null)
+            {
+                try {
+                    int val = deviceFanatec.read(buffer, 100);
+                    if (val > 0) {
+                        System.out.print("Received Data: ");
+                        for (int i = 0; i < val; i++) {
+                            System.out.printf("0x%02X ", buffer[i]);
+                        }
+                        System.out.println();
+                    }
+                } catch (Exception ex) {
+                    System.err.println("Error reading from Fanatec device: " + ex.getMessage());
+                }
+            }
+        }));
+        timelineFanatec.setCycleCount(Timeline.INDEFINITE);
+        timelineFanatec.play();
     }
 
     @Override

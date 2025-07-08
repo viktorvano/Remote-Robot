@@ -72,6 +72,9 @@ public class RobotController extends Application implements HidServicesListener{
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
 
+    int[] fanatecPids = {0xABC1, 0xABC2, 0xDEF3};  // List of Fanatec Product IDs you want
+    int fanatecVid = 0x1430;   // Example Fanatec VID (replace with yours)
+
     @Override
     public void start(Stage stage){
         final int width = 1600;
@@ -82,11 +85,11 @@ public class RobotController extends Application implements HidServicesListener{
 
         pane = new Pane();
 
-        stm32ClientRemoteControl = new ClientSender(stringSTM32IP, 80, 1800);
+        /*stm32ClientRemoteControl = new ClientSender(stringSTM32IP, 80, 1800);
         stm32ClientRemoteControl.start();
 
         stm32Status = new STM32Status(stm32StatusUpdatePeriod, stringSTM32IP);
-        stm32Status.start();
+        stm32Status.start();*/
 
         androidLabel = new Label("");
         androidLabel.setFont(Font.font("Arial", 24));
@@ -115,11 +118,11 @@ public class RobotController extends Application implements HidServicesListener{
         imageViewCamera.setPreserveRatio(true);
         pane.getChildren().add(imageViewCamera);
 
-        myAndroidCamera = new AndroidCamera(cameraPort);
+        /*myAndroidCamera = new AndroidCamera(cameraPort);
         myAndroidCamera.start();
 
         androidBatteryClient = new AndroidBatteryClient(stringAndroidIP,cameraPort+1);
-        androidBatteryClient.start();
+        androidBatteryClient.start();*/
 
         try{
             imageViewCarLogo = new ImageView(new Image("com/viktor/vano/robot/controller/images/car.jpg"));
@@ -304,9 +307,22 @@ public class RobotController extends Application implements HidServicesListener{
         hidServices.start();
 
         // Provide a list of attached devices
+        System.out.println("Listing all devices:");
         for (HidDevice hidDevice : hidServices.getAttachedHidDevices()) {
             System.out.println(hidDevice);
         }
+
+        System.out.println("Listing Fanatec devices:");
+        for (HidDevice device : hidServices.getAttachedHidDevices()) {
+            if (device.getVendorId() == fanatecVid) {
+                for (int pid : fanatecPids) {
+                    if (device.getProductId() == pid) {
+                        System.out.println("✅ Found Fanatec Device: " + device);
+                    }
+                }
+            }
+        }
+
         timeline = new Timeline(new KeyFrame(Duration.millis(10), event ->{
             updateImage();
             if(androidBatteryClient.isMessageReceived())
@@ -378,10 +394,10 @@ public class RobotController extends Application implements HidServicesListener{
     @Override
     public void stop() throws Exception {
         super.stop();
-        myAndroidCamera.stopServer();
+        /*myAndroidCamera.stopServer();
         androidBatteryClient.stopServer();
         stm32ClientRemoteControl.stopClient();
-        stm32Status.stopSTM32Status();
+        stm32Status.stopSTM32Status();*/
         System.out.println("Closing the application.");
     }
 

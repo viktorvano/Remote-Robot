@@ -320,7 +320,7 @@ public class RobotController extends Application implements HidServicesListener{
                     "\nLeft: " + left);
         }));
         timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
+        //timeline.play();
 
         timelineSend = new Timeline(new KeyFrame(Duration.millis(200), event ->{
             if(stm32Status.isMessageAvailable())
@@ -372,7 +372,7 @@ public class RobotController extends Application implements HidServicesListener{
             stm32ClientRemoteControl.sendDataToServer(messageOut);
         }));
         timelineSend.setCycleCount(Timeline.INDEFINITE);
-        timelineSend.play();
+        //timelineSend.play();
     }
 
     @Override
@@ -541,6 +541,16 @@ public class RobotController extends Application implements HidServicesListener{
 
         System.out.printf(ANSI_PURPLE + "Data received:%n");
         byte[] dataReceived = event.getDataReceived();
+
+        if (dataReceived.length >= 3) {
+            int steering = dataReceived[0] & 0xFF;  // Unsigned byte
+            int gas = dataReceived[1] & 0xFF;
+            int brake = dataReceived[2] & 0xFF;
+
+            System.out.println("Steering: " + steering);
+            System.out.println("Gas: " + gas);
+            System.out.println("Brake: " + brake);
+        }
 
         printAsHex(dataReceived);
 

@@ -78,6 +78,9 @@ public class RobotController extends Application implements HidServicesListener{
 
     private final ArrayList<HidDevice> fanatecDevices = new ArrayList<>();
 
+    private float steeringWheel = 0.0f;
+    private int gas = 0;
+
     @Override
     public void start(Stage stage){
         final int width = 1600;
@@ -428,7 +431,10 @@ public class RobotController extends Application implements HidServicesListener{
                                 {
                                     centered_value = -(1.0f + (steeringValue / 32767.0f));
                                 }
-                                System.out.println("centered values: " + centered_value);
+                                steeringWheel = centered_value;
+                                System.out.println("Steering wheel: " + steeringWheel);
+                                gas = 255 - (buffer[20] & 0xFF);
+                                System.out.println("Gas Pedal: " + gas);
                             }
                         }
                     } catch (Exception ex) {

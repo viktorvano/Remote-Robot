@@ -80,6 +80,9 @@ public class RobotController extends Application implements HidServicesListener{
 
     private float steeringWheel = 0.0f;
     private int gas = 0;
+    private int gear;
+    private boolean seqUp;
+    private boolean seqDown;
 
     @Override
     public void start(Stage stage){
@@ -407,7 +410,7 @@ public class RobotController extends Application implements HidServicesListener{
 
         byte[] buffer = new byte[64];  // Adjust buffer if needed
 
-        timelineFanatec = new Timeline(new KeyFrame(Duration.millis(300), event -> {
+        timelineFanatec = new Timeline(new KeyFrame(Duration.millis(10), event -> {
             for (HidDevice fanDevice : fanatecDevices) {
                 if (fanDevice != null && fanDevice.isOpen()) {
                     try {
@@ -420,9 +423,8 @@ public class RobotController extends Application implements HidServicesListener{
                                 System.out.printf("%d ", buffer[i] & 0xFF);
                             }
                             System.out.println();
-                            if (val >= 19) {  // Need at least 19 bytes (0-based index 18)
+                            if (val >= 19) {
                                 short steeringValue = (short)(((buffer[18] & 0xFF) << 8) | (buffer[17] & 0xFF));
-                                System.out.println("Steering Wheel Value (16-bit signed): " + steeringValue);
                                 float centered_value = 0;
                                 if(steeringValue > 0)
                                 {
@@ -435,6 +437,32 @@ public class RobotController extends Application implements HidServicesListener{
                                 System.out.println("Steering wheel: " + steeringWheel);
                                 gas = 255 - (buffer[20] & 0xFF);
                                 System.out.println("Gas Pedal: " + gas);
+                                if((buffer[2] & 0xFF) == 1 && !seqUp)
+                                {
+                                    seqUp = true;
+                                }else if((buffer[2] & 0xFF) == 2 && !seqDown)
+                                {
+                                    seqDown = true;
+                                }
+
+                                if((buffer[2] & 0xFF) == 0 && seqUp)
+                                {
+                                    if(gear < 7)
+                                    {
+                                        gear++;
+                                    }
+                                    seqUp = false;
+                                }
+
+                                if((buffer[2] & 0xFF) == 0 && seqDown)
+                                {
+                                    if(gear > -1)
+                                    {
+                                        gear--;
+                                    }
+                                    seqDown = false;
+                                }
+                                System.out.println("Gear:" + gear);
                             }
                         }
                     } catch (Exception ex) {

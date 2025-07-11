@@ -26,6 +26,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import static com.viktor.vano.robot.controller.FileManager.readOrCreateFile;
@@ -72,10 +73,10 @@ public class RobotController extends Application implements HidServicesListener{
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
 
-    int[] fanatecPids = {0xABC1, 0xABC2, 0xDEF3};  // List of Fanatec Product IDs you want
-    int fanatecVid = 0x1430;   // Example Fanatec VID (replace with yours)
+    int[] fanatecPids = {0xABC1, 0xABC2, 0xDEF3, 0x0EB7, 0x0020};  // List of Fanatec Product IDs you want
+    int fanatecVid = 0x0EB7;   // Example Fanatec VID (replace with yours)
 
-    private HidDevice deviceFanatec;
+    private final ArrayList<HidDevice> fanatecDevices = new ArrayList<>();
 
     @Override
     public void start(Stage stage){
@@ -309,10 +310,10 @@ public class RobotController extends Application implements HidServicesListener{
         hidServices.start();
 
         // Provide a list of attached devices
-        System.out.println("Listing all devices:");
+        /*System.out.println("Listing all devices:");
         for (HidDevice hidDevice : hidServices.getAttachedHidDevices()) {
             System.out.println(hidDevice);
-        }
+        }*/
 
         System.out.println("Listing Fanatec devices:");
         for (HidDevice device : hidServices.getAttachedHidDevices()) {
@@ -320,10 +321,7 @@ public class RobotController extends Application implements HidServicesListener{
                 for (int pid : fanatecPids) {
                     if (device.getProductId() == pid) {
                         System.out.println("✅ Found Fanatec Device: " + device);
-                        if(deviceFanatec == null)
-                        {
-                            deviceFanatec = device;
-                        }
+                        fanatecDevices.add(device);
                     }
                 }
             }
@@ -396,25 +394,46 @@ public class RobotController extends Application implements HidServicesListener{
         timelineSend.setCycleCount(Timeline.INDEFINITE);
         //timelineSend.play();
 
-        if (deviceFanatec != null && !deviceFanatec.isOpen())
+        for(HidDevice fanDevice : fanatecDevices)
         {
-            deviceFanatec.open();
-        }
-        byte[] buffer = new byte[64];  // Size depends on device report size
-        timelineFanatec = new Timeline(new KeyFrame(Duration.millis(10), event ->{
-            if(deviceFanatec != null)
+            if (fanDevice != null && !fanDevice.isOpen())
             {
-                try {
-                    int val = deviceFanatec.read(buffer, 100);
-                    if (val > 0) {
-                        System.out.print("Received Data: ");
-                        for (int i = 0; i < val; i++) {
-                            System.out.printf("0x%02X ", buffer[i]);
+                fanDevice.open();
+            }
+        }
+
+        byte[] buffer = new byte[64];  // Adjust buffer if needed
+
+        timelineFanatec = new Timeline(new KeyFrame(Duration.millis(300), event -> {
+            for (HidDevice fanDevice : fanatecDevices) {
+                if (fanDevice != null && fanDevice.isOpen()) {
+                    try {
+                        int val = fanDevice.read(buffer, 100);
+                        if (val > 0) {
+                            System.out.println("✅ Data from device: " + fanDevice);
+                            System.out.print("Received Data: ");
+                            for (int i = 0; i < val; i++) {
+                                //System.out.printf("0x%02X ", buffer[i]);
+                                System.out.printf("%d ", buffer[i] & 0xFF);
+                            }
+                            System.out.println();
+                            if (val >= 19) {  // Need at least 19 bytes (0-based index 18)
+                                short steeringValue = (short)(((buffer[18] & 0xFF) << 8) | (buffer[17] & 0xFF));
+                                System.out.println("Steering Wheel Value (16-bit signed): " + steeringValue);
+                                float centered_value = 0;
+                                if(steeringValue > 0)
+                                {
+                                    centered_value = 1.0f - (steeringValue / 32767.0f);
+                                }else if(steeringValue < 0)
+                                {
+                                    centered_value = -(1.0f + (steeringValue / 32767.0f));
+                                }
+                                System.out.println("centered values: " + centered_value);
+                            }
                         }
-                        System.out.println();
+                    } catch (Exception ex) {
+                        System.err.println("Error reading from Fanatec device: " + ex.getMessage());
                     }
-                } catch (Exception ex) {
-                    System.err.println("Error reading from Fanatec device: " + ex.getMessage());
                 }
             }
         }));

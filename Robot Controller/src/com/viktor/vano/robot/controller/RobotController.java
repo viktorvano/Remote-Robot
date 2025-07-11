@@ -80,6 +80,7 @@ public class RobotController extends Application implements HidServicesListener{
 
     private float steeringWheel = 0.0f;
     private int gas = 0;
+    private int brake = 0;
     private int gear;
     private boolean seqUp;
     private boolean seqDown;
@@ -465,6 +466,9 @@ public class RobotController extends Application implements HidServicesListener{
                                     seqDown = false;
                                 }
                                 System.out.println("Gear:" + gear);
+
+                                brake = 255 - (buffer[22] & 0xFF);
+                                System.out.println("Brake: " + brake);
                             }
                         }
                     } catch (Exception ex) {

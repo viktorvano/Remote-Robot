@@ -83,6 +83,8 @@ public class RobotController extends Application implements HidServicesListener{
     private int gear;
     private boolean seqUp;
     private boolean seqDown;
+    private final int upperGearLimit = 1;
+    private final int lowerGearLimit = -1;
 
     @Override
     public void start(Stage stage){
@@ -410,7 +412,7 @@ public class RobotController extends Application implements HidServicesListener{
 
         byte[] buffer = new byte[64];  // Adjust buffer if needed
 
-        timelineFanatec = new Timeline(new KeyFrame(Duration.millis(10), event -> {
+        timelineFanatec = new Timeline(new KeyFrame(Duration.millis(100), event -> {
             for (HidDevice fanDevice : fanatecDevices) {
                 if (fanDevice != null && fanDevice.isOpen()) {
                     try {
@@ -447,7 +449,7 @@ public class RobotController extends Application implements HidServicesListener{
 
                                 if((buffer[2] & 0xFF) == 0 && seqUp)
                                 {
-                                    if(gear < 7)
+                                    if(gear < upperGearLimit)
                                     {
                                         gear++;
                                     }
@@ -456,7 +458,7 @@ public class RobotController extends Application implements HidServicesListener{
 
                                 if((buffer[2] & 0xFF) == 0 && seqDown)
                                 {
-                                    if(gear > -1)
+                                    if(gear > lowerGearLimit)
                                     {
                                         gear--;
                                     }

@@ -97,11 +97,11 @@ public class RobotController extends Application implements HidServicesListener{
 
         pane = new Pane();
 
-        /*stm32ClientRemoteControl = new ClientSender(stringSTM32IP, 80, 1800);
+        stm32ClientRemoteControl = new ClientSender(stringSTM32IP, 80, 1800);
         stm32ClientRemoteControl.start();
 
         stm32Status = new STM32Status(stm32StatusUpdatePeriod, stringSTM32IP);
-        stm32Status.start();*/
+        stm32Status.start();
 
         androidLabel = new Label("");
         androidLabel.setFont(Font.font("Arial", 24));
@@ -130,11 +130,11 @@ public class RobotController extends Application implements HidServicesListener{
         imageViewCamera.setPreserveRatio(true);
         pane.getChildren().add(imageViewCamera);
 
-        /*myAndroidCamera = new AndroidCamera(cameraPort);
+        myAndroidCamera = new AndroidCamera(cameraPort);
         myAndroidCamera.start();
 
         androidBatteryClient = new AndroidBatteryClient(stringAndroidIP,cameraPort+1);
-        androidBatteryClient.start();*/
+        androidBatteryClient.start();
 
         try{
             imageViewCarLogo = new ImageView(new Image("com/viktor/vano/robot/controller/images/car.jpg"));
@@ -532,10 +532,10 @@ public class RobotController extends Application implements HidServicesListener{
     @Override
     public void stop() throws Exception {
         super.stop();
-        /*myAndroidCamera.stopServer();
+        myAndroidCamera.stopServer();
         androidBatteryClient.stopServer();
         stm32ClientRemoteControl.stopClient();
-        stm32Status.stopSTM32Status();*/
+        stm32Status.stopSTM32Status();
         System.out.println("Closing the application.");
     }
 

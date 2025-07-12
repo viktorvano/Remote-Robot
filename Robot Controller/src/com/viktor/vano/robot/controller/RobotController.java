@@ -517,9 +517,9 @@ public class RobotController extends Application implements HidServicesListener{
         }
         else if(gas == 0 && brake == 0)
         {
-            if(speed >= 10)// slowly slow down
+            if(speed >= 5)// slowly slow down
             {
-                speed -= 10;
+                speed -= 5;
             }else
             {
                 speed = 0;

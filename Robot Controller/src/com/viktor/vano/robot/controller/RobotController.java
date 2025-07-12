@@ -485,7 +485,7 @@ public class RobotController extends Application implements HidServicesListener{
             }
         }
 
-        if(Math.abs(steeringWheel) < 0.08)
+        if(Math.abs(steeringWheel) < 0.08 && !fanatecDevices.isEmpty())
         {
             right = false;
             left = false;

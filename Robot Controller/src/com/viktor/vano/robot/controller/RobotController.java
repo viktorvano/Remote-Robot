@@ -357,7 +357,7 @@ public class RobotController extends Application implements HidServicesListener{
                     "\nLeft: " + left);
         }));
         timeline.setCycleCount(Timeline.INDEFINITE);
-        //timeline.play();
+        timeline.play();
 
         timelineSend = new Timeline(new KeyFrame(Duration.millis(200), event ->{
             if(stm32Status.isMessageAvailable())
@@ -502,13 +502,19 @@ public class RobotController extends Application implements HidServicesListener{
         if(gas >= 32 && brake == 0 && gear == 1)
         {
             forward = true;
-            speed = gas;
             backward = false;
+            if(gas > speed)
+            {
+                speed = gas;
+            }
         }else if(gas >= 32 && brake == 0 && gear == 0)
         {
             forward = false;
-            speed = gas;
             backward = true;
+            if(gas > speed)
+            {
+                speed = gas;
+            }
         }else if(gas == 0 && brake >= 32)
         {
             forward = false;

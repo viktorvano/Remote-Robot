@@ -16,11 +16,12 @@ uint16_t echoPins[5] = {Echo0_Pin, Echo1_Pin, Echo2_Pin, Echo3_Pin, Echo4_Pin};
 float batteryVoltage = 8.4f;
 uint32_t ADC_Value = 0;
 uint8_t buffer[2000];
-uint16_t buffer_index = 0, timeout = 0, messageHandlerFlag = 0, netTimeout = 0;
+uint16_t buffer_index = 0, timeout = 0, messageHandlerFlag = 0, netTimeout = 0, no_activity_counter = 0;
 uint8_t oneSecondFlag = 0;
 float percent = 100;
 uint8_t speed = 0;
 uint32_t safeCounter = 0;
+ESP_State esp_state = ESP_Disconnected;
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
@@ -342,6 +343,19 @@ void messageHandler()
 			|| string_contains((char*)buffer, "DISCONNECT", buffer_index) != -1))
 	{
 		HAL_UART_Transmit(&huart1, (uint8_t*)WiFi_Credentials, strlen(WiFi_Credentials), 100);
+		esp_state = ESP_Disconnected;
+	}else if(string_contains((char*)buffer, "CWJAP", buffer_index) != -1//"AT+CWJAP?\r\n"
+			&& (string_contains((char*)buffer, "OK", buffer_index) != -1)
+			&& (string_contains((char*)buffer, "No AP", buffer_index) == -1))// does not contain "No AP"
+	{
+		esp_state = ESP_Connected;
+	}else if(string_contains((char*)buffer, "WIFI CONNECTED", buffer_index) != -1)
+	{
+		esp_state = ESP_Connected;
+	}else if(string_contains((char*)buffer, "boot mode:", buffer_index) != -1)
+	{
+		esp_state = ESP_Disconnected;
+		ESP_Server_Init();
 	}
 	ESP_Clear_Buffer();
 	__HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);

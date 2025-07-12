@@ -157,8 +157,22 @@ int main(void)
 	{
 	  messageHandlerFlag = 0;
 	  netTimeout = 0;
+	  no_activity_counter = 0;
 	  messageHandler();
 	}
+
+	  if(no_activity_counter > 20
+		&& esp_state == ESP_Connected)
+	  {
+		  IWDG->KR = 0xAAAA;//Reset WatchDog
+		  HAL_UART_Transmit(&huart1, (uint8_t*)"AT+CWJAP?\r\n", strlen("AT+CWJAP?\r\n"), 100);
+		  esp_state = ESP_Disconnected;//until message handler confirms
+		  HAL_Delay(500);
+	  }else if(esp_state == ESP_Disconnected
+			  && no_activity_counter > 30)
+	  {
+		  ESP_Server_Init();
+	  }
   }
   /* USER CODE END 3 */
 }

@@ -25,11 +25,16 @@ extern TIM_HandleTypeDef htim4;
 extern UART_HandleTypeDef huart1;
 
 //Change your WiFi credentials
-#define WiFi_Credentials	"AT+CWJAP=\"WiFiSSID\",\"WiFiPASSWORD\"\r\n"
+#define WiFi_Credentials	"AT+CWJAP=\"Orange_2G\",\"96732212\"\r\n"
 
 #define TriggerDuration 2
 #define Steering_PWM_Channel	TIM_CHANNEL_1
 #define Motor_PWM_Channel		TIM_CHANNEL_2
+
+typedef enum {
+	ESP_Disconnected,
+	ESP_Connected
+} ESP_State;
 
 extern uint16_t distance, triggerTime, sensor, d[5];
 extern GPIO_TypeDef *triggerPorts[5];
@@ -39,11 +44,12 @@ extern uint16_t echoPins[5];
 extern float batteryVoltage;
 extern uint32_t ADC_Value;
 extern uint8_t buffer[2000];
-extern uint16_t buffer_index, timeout, messageHandlerFlag, netTimeout;
+extern uint16_t buffer_index, timeout, messageHandlerFlag, netTimeout, no_activity_counter;
 extern uint8_t oneSecondFlag;
 extern float percent;
 extern uint8_t speed;
 extern uint32_t safeCounter;
+extern ESP_State esp_state;
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc);
 void SysTickEnable();

@@ -34,11 +34,11 @@ import static com.viktor.vano.robot.controller.Variables.*;
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
 
 public class RobotController extends Application implements HidServicesListener{
-    private static final String version = "20250708";
+    private static final String version = "20250712";
     private Pane pane;
     private int length = 0;
     private Label androidLabel;
-    private Timeline timeline, timelineSend, timelineFanatec;
+    private Timeline timeline, timelineSend;
     private AndroidCamera myAndroidCamera;
     private AndroidBatteryClient androidBatteryClient;
     private ImageView imageViewCamera;
@@ -50,7 +50,7 @@ public class RobotController extends Application implements HidServicesListener{
     private boolean right = false;
     private boolean left = false;
     private Slider slider;
-    private int speed = 51;
+    private int speed = 0;
     private Label labelSpeed;
     private Label labelDirection;
     private Label labelSTM32Status;
@@ -81,11 +81,11 @@ public class RobotController extends Application implements HidServicesListener{
     private float steeringWheel = 0.0f;
     private int gas = 0;
     private int brake = 0;
-    private int gear;
+    private int gear = 1;// 1 is forward
     private boolean seqUp;
     private boolean seqDown;
-    private final int upperGearLimit = 1;
-    private final int lowerGearLimit = -1;
+    private final int upperGearLimit = 1;// 1 is forward
+    private final int lowerGearLimit = 0;// 0 is backward
 
     @Override
     public void start(Stage stage){
@@ -336,6 +336,14 @@ public class RobotController extends Application implements HidServicesListener{
             }
         }
 
+        for(HidDevice fanDevice : fanatecDevices)
+        {
+            if (fanDevice != null && !fanDevice.isOpen())
+            {
+                fanDevice.open();
+            }
+        }
+
         timeline = new Timeline(new KeyFrame(Duration.millis(10), event ->{
             updateImage();
             if(androidBatteryClient.isMessageReceived())
@@ -370,6 +378,8 @@ public class RobotController extends Application implements HidServicesListener{
                 }
             }
 
+            readFanatecSimulator();
+
             messageOut = "";
 
             if(forward)
@@ -401,84 +411,122 @@ public class RobotController extends Application implements HidServicesListener{
             stm32ClientRemoteControl.sendDataToServer(messageOut);
         }));
         timelineSend.setCycleCount(Timeline.INDEFINITE);
-        //timelineSend.play();
+        timelineSend.play();
+    }
 
-        for(HidDevice fanDevice : fanatecDevices)
+    private void readFanatecSimulator()
+    {
+        byte[] buffer = new byte[64];  // Adjust buffer if needed
+        for (HidDevice fanDevice : fanatecDevices)
         {
-            if (fanDevice != null && !fanDevice.isOpen())
+            if (fanDevice != null && fanDevice.isOpen())
             {
-                fanDevice.open();
+                try {
+                    int val = fanDevice.read(buffer, 100);
+                    if (val > 0)
+                    {
+                        System.out.println("✅ Data from device: " + fanDevice);
+                        System.out.print("Received Data: ");
+                        for (int i = 0; i < val; i++)
+                        {
+                            //System.out.printf("0x%02X ", buffer[i]);
+                            System.out.printf("%d ", buffer[i] & 0xFF);
+                        }
+                        System.out.println();
+                        if (val >= 19)
+                        {
+                            short steeringValue = (short)(((buffer[18] & 0xFF) << 8) | (buffer[17] & 0xFF));
+                            float centered_value = 0;
+                            if(steeringValue > 0)
+                            {
+                                centered_value = 1.0f - (steeringValue / 32767.0f);
+                            }else if(steeringValue < 0)
+                            {
+                                centered_value = -(1.0f + (steeringValue / 32767.0f));
+                            }
+                            steeringWheel = centered_value;
+                            System.out.println("Steering wheel: " + steeringWheel);
+                            gas = 255 - (buffer[20] & 0xFF);
+                            System.out.println("Gas Pedal: " + gas);
+                            if((buffer[2] & 0xFF) == 1 && !seqUp)
+                            {
+                                seqUp = true;
+                            }else if((buffer[2] & 0xFF) == 2 && !seqDown)
+                            {
+                                seqDown = true;
+                            }
+
+                            if((buffer[2] & 0xFF) == 0 && seqUp)
+                            {
+                                if(gear < upperGearLimit)
+                                {
+                                    gear++;
+                                }
+                                seqUp = false;
+                            }
+
+                            if((buffer[2] & 0xFF) == 0 && seqDown)
+                            {
+                                if(gear > lowerGearLimit)
+                                {
+                                    gear--;
+                                }
+                                seqDown = false;
+                            }
+                            System.out.println("Gear:" + gear);
+
+                            brake = 255 - (buffer[22] & 0xFF);
+                            System.out.println("Brake: " + brake);
+                        }
+                    }
+                } catch (Exception ex) {
+                    System.err.println("Error reading from Fanatec device: " + ex.getMessage());
+                }
             }
         }
 
-        byte[] buffer = new byte[64];  // Adjust buffer if needed
+        if(Math.abs(steeringWheel) < 0.08)
+        {
+            right = false;
+            left = false;
+        } else if (steeringWheel >= 0.8)
+        {
+            right = true;
+            left = false;
+        } else if (steeringWheel <= -0.8)
+        {
+            right = false;
+            left = true;
+        }
 
-        timelineFanatec = new Timeline(new KeyFrame(Duration.millis(100), event -> {
-            for (HidDevice fanDevice : fanatecDevices) {
-                if (fanDevice != null && fanDevice.isOpen()) {
-                    try {
-                        int val = fanDevice.read(buffer, 100);
-                        if (val > 0) {
-                            System.out.println("✅ Data from device: " + fanDevice);
-                            System.out.print("Received Data: ");
-                            for (int i = 0; i < val; i++) {
-                                //System.out.printf("0x%02X ", buffer[i]);
-                                System.out.printf("%d ", buffer[i] & 0xFF);
-                            }
-                            System.out.println();
-                            if (val >= 19) {
-                                short steeringValue = (short)(((buffer[18] & 0xFF) << 8) | (buffer[17] & 0xFF));
-                                float centered_value = 0;
-                                if(steeringValue > 0)
-                                {
-                                    centered_value = 1.0f - (steeringValue / 32767.0f);
-                                }else if(steeringValue < 0)
-                                {
-                                    centered_value = -(1.0f + (steeringValue / 32767.0f));
-                                }
-                                steeringWheel = centered_value;
-                                System.out.println("Steering wheel: " + steeringWheel);
-                                gas = 255 - (buffer[20] & 0xFF);
-                                System.out.println("Gas Pedal: " + gas);
-                                if((buffer[2] & 0xFF) == 1 && !seqUp)
-                                {
-                                    seqUp = true;
-                                }else if((buffer[2] & 0xFF) == 2 && !seqDown)
-                                {
-                                    seqDown = true;
-                                }
-
-                                if((buffer[2] & 0xFF) == 0 && seqUp)
-                                {
-                                    if(gear < upperGearLimit)
-                                    {
-                                        gear++;
-                                    }
-                                    seqUp = false;
-                                }
-
-                                if((buffer[2] & 0xFF) == 0 && seqDown)
-                                {
-                                    if(gear > lowerGearLimit)
-                                    {
-                                        gear--;
-                                    }
-                                    seqDown = false;
-                                }
-                                System.out.println("Gear:" + gear);
-
-                                brake = 255 - (buffer[22] & 0xFF);
-                                System.out.println("Brake: " + brake);
-                            }
-                        }
-                    } catch (Exception ex) {
-                        System.err.println("Error reading from Fanatec device: " + ex.getMessage());
-                    }
-                }
+        if(gas >= 32 && brake == 0 && gear == 1)
+        {
+            forward = true;
+            speed = gas;
+            backward = false;
+        }else if(gas >= 32 && brake == 0 && gear == 0)
+        {
+            forward = false;
+            speed = gas;
+            backward = true;
+        }else if(gas == 0 && brake >= 32)
+        {
+            forward = false;
+            speed = 0;
+            backward = false;
+        }
+        else if(gas == 0 && brake == 0)
+        {
+            if(speed >= 10)// slowly slow down
+            {
+                speed -= 10;
+            }else
+            {
+                speed = 0;
             }
-        }));
-        timelineFanatec.setCycleCount(Timeline.INDEFINITE);
-        timelineFanatec.play();
+        }
+
+        slider.setValue((double)speed/2.55);
     }
 
     @Override

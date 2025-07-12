@@ -112,7 +112,7 @@ public class RobotController extends Application implements HidServicesListener{
 
         Scene scene = new Scene(pane, width, height);
 
-        stage.setTitle("Robot Controller " + version);
+        stage.setTitle("Fanatec Robot Controller " + version);
         stage.setScene(scene);
         stage.show();
         stage.setMinWidth(stage.getWidth());

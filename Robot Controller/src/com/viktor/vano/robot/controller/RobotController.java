@@ -28,6 +28,7 @@ import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static com.viktor.vano.robot.controller.FileManager.readOrCreateFile;
 import static com.viktor.vano.robot.controller.Variables.*;
@@ -180,10 +181,11 @@ public class RobotController extends Application implements HidServicesListener{
         labelSpeed.setLayoutY(330);
         pane.getChildren().add(labelSpeed);
 
-        labelDirection = new Label("Forward: " + forward +
-                                        "\nBackward: " + backward +
-                                        "\nRight: " + right +
-                                        "\nLeft: " + left);
+        labelDirection = new Label("Vpred: " + forward +
+                                        "\nVzad: " + backward +
+                                        "\nVpravo: " + right +
+                                        "\nVľavo: " + left +
+                                        "\nPrevod: VPRED");
         labelDirection.setLayoutX(1400);
         labelDirection.setLayoutY(500);
         pane.getChildren().add(labelDirection);
@@ -344,6 +346,7 @@ public class RobotController extends Application implements HidServicesListener{
             }
         }
 
+        AtomicReference<String> prevod = new AtomicReference<>("");
         timeline = new Timeline(new KeyFrame(Duration.millis(10), event ->{
             updateImage();
             if(androidBatteryClient.isMessageReceived())
@@ -351,10 +354,18 @@ public class RobotController extends Application implements HidServicesListener{
                 androidLabel.setText(androidBatteryClient.getMessage());
             }
 
-            labelDirection.setText("Forward: " + forward +
-                    "\nBackward: " + backward +
-                    "\nRight: " + right +
-                    "\nLeft: " + left);
+            if(gear == 0)
+            {
+                prevod.set("REVERZ");
+            }else
+            {
+                prevod.set("VPRED");
+            }
+            labelDirection.setText("Vpred: " + forward +
+                                    "\nVzad: " + backward +
+                                    "\nVpravo: " + right +
+                                    "\nVľavo: " + left +
+                                    "\nPrevod: " + prevod);
         }));
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
